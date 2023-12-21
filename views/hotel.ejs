@@ -1,0 +1,162 @@
+
+<%- include ('parts/header')%>
+<%- include ('parts/navbar')%>
+
+<link rel="stylesheet" href="/hotel.css">
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="main-txt">
+      <!-- <h1>About <span>Us</span></h1> -->
+    </div>
+
+    <% if (!hotel) { %>
+        <div class="alert alert-danger ">
+            there is no hotel
+        </div>
+    
+        <%  } else { %>
+
+    <div class="row" >
+      <!-- style="margin-top: 50px;" -->
+      <div class="col-md-6 py-3 py-md-0">
+        <% if(  validationError ){ %>
+            <p class="alert alert-danger">
+              <%= validationError.msg %>
+            </p>
+            <% } %>
+
+            <div class="card">
+              <img src="/<%=hotel.image %>" alt="">
+
+            </div>
+
+        <div class="card">
+          <div class="card-one">
+
+
+
+
+
+            <form action="/pre-booking" method="POST">
+              <input type="number" class="form-control" placeholder="Arrivée"  name = "Arrivee"  required>
+  
+  
+  
+              <input type="number" class="form-control" placeholder="Nombre de Nuits" name="NbreNuit" required>
+              <input type="number" class="form-control" placeholder="Nombre d'Adulte"  name="NbreAdult" required>
+              <input type="number" class="form-control" placeholder="Nombre d'Enfant"  name="NbreEnfant" required>
+              <input type="number" class="form-control" placeholder="Nombre d'Age Enfant" required>
+              <input type="number" class="form-control" placeholder="Nombre de Chambre" name="NbreChambre" required>
+  
+            
+  
+  
+  
+  
+            
+  
+  
+                 
+              <input type="hidden" name="name" value="<%= hotel.name %>">
+              <input type="hidden" name="price" value="<%= hotel.price %>">
+              <input type="hidden" name="hotel" value="<%= hotel._id%>">
+              <input type="hidden" name="image" value="<%=hotel.image %>">
+  
+  
+              
+              <input type="hidden" name="PrixAllinclusive" value="<%= hotel.PrixAllinclusive %>">
+              <input type="hidden" name="PrixDemiPension" value="<%= hotel.PrixDemiPension %>">
+              <input type="hidden" name="PrixpetitDejeuner" value="<%= hotel.PrixpetitDejeuner %>">
+  
+  
+  
+              <input type="hidden" name="redirectTo" value="/hotel/<%= hotel._id%>">
+              <!-- <input type="submit" value ="Add to cart" class="btn btn-primary">   -->
+              <!-- <input type="submit" value ="Pre-booking" class="btn btn-primary btn-lg btn-block">      -->
+  
+                    
+  
+  
+  
+  
+           
+            <textarea class="form-control" rows="5" name="text" placeholder="Enter Your Name & Details"></textarea>
+              <input type="submit" value ="Continuez la réservation" class=" btn btn-primary">     
+          
+  
+          </form>
+
+          </div>
+    
+
+        </div>
+
+
+
+
+
+
+      </div>
+
+
+
+
+      <div class="col-md-6 py-3 py-md-0">
+        <div class="card ">
+          <div class="card-body">
+
+
+            
+        <h1><span><%=hotel.name %></span></h1>
+        <h6>  <i class='fas fa-map-marker-alt'></i>
+          <%= hotel.category %></h6>
+
+        <div class="star">
+          <i class="fa-solid fa-star checked"></i>
+          <i class="fa-solid fa-star checked"></i>
+          <i class="fa-solid fa-star checked"></i>
+          <i class="fa-solid fa-star "></i>
+          <i class="fa-solid fa-star "></i>
+        </div>
+
+
+        <h2>Prix/persone :<strong> <%= hotel.price %> DT</strong></h2>
+
+        <p> <strong > Details sur <%=hotel.name %>:<br></strong>
+          <%= hotel.description %> </p>
+
+            
+          </div>
+
+     
+
+        </div>
+      </div>
+    </div>
+
+    <% } %>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include ('parts/footer')%>

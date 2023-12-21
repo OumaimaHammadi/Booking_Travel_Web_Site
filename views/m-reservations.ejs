@@ -1,0 +1,124 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+<link rel="stylesheet" href="/m-reservations.css">
+
+
+
+
+<div class="container">
+    <form action="/admin/reservation" method="GET" class="bouttons">
+
+
+
+<input type="submit"  class="btn btn-primary  btn-lg "  name="status"  value ="All"       >
+<input type="submit"  class="btn btn-danger btn-lg  mb-6 " name="status"  value ="Pending"    >
+<input type="submit"  class="btn btn-warning  btn-lg mb-6 "   name="status" value ="Waiting"    >
+<input type="submit"  class="btn btn-success btn-lg mb-6"  name="status"  value ="Received"   >
+
+
+</form>
+
+</div>
+
+
+
+<div class="container">
+ 
+  
+  <form>
+    <div class="input-group">
+    <input id="email" type="email" class="form-control" name="email" placeholder="Email of User"> 
+         <!--<input type="submit" value="Search"  name="email" placeholder="User Email" > -->
+
+      <span class="input-group-addon">
+        <input type="submit" value="Search" class="btn btn-primary ml-2"> 
+
+      </span>
+
+
+    </div>
+
+    
+
+   
+  </form>
+
+</div>
+
+ 
+
+<div class="container">
+    <% if( orders.length === 0) { %>
+        <p class="alert alert-danger">Il n'y a pas de réservation </p>
+        <% } else {  %>
+
+
+
+
+<table class="table">
+    <thead>
+        <th> N°</th> 
+        <th> Email</th> 
+
+        <th> Hotel name </th>
+
+        <th> Prix/Personne </th>
+        <th> Amount</th>
+        <th> Total</th>
+        <th> Address</th>
+        <th> Status </th>
+        <th> Time </th>
+        <th>     </th>
+
+    </thead>
+        <tbody>
+            <%  for ( let i = 0 ; i< orders.length ;  i++) {  %>
+
+            <tr>
+                <td data-label="N°"> <%= i+1 %> </td>
+                <td data-label="Email"> cardId: <%= orders[i].cardId
+                   
+                    %> </td>
+
+
+                <td data-label="Hotel name"> <%= orders[i].name %> </td>
+                <td data-label="Prix/Personne"> <%=orders[i].price %> dt</td>
+                <td data-label="Amount"> 6<%=orders[i].amount %> </td>
+                <td data-label="Total"> 500 <%=orders[i].total %></td>
+                <td data-label="Address">Awled Ben zina  <%=orders[i].addresse %> </td>
+                <td data-label="Status"> Received <%=orders[i].status %> </td>
+                <td data-label="Time"> 19:07<%= orders[i].timestamp %> </td>
+                
+
+                <td> <input type="submit"  class="btn btn-success"   value ="Sauvegarder" formaction="/admin/reservation" ></td>
+
+
+
+
+                
+                
+
+
+
+            </tr>
+
+
+            <% } %>
+
+        </tbody>
+</table>
+
+
+
+
+
+        <% }  %>    
+
+    </div>
+
+
+         
+
+
+<%- include('parts/footer') %>

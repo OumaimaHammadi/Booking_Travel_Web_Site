@@ -1,0 +1,348 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+<link rel="stylesheet" href="/home.css">
+
+
+
+
+<div class="container">
+
+<div class="row">
+
+     <!-- Home Section Start -->
+     <div class="home">
+      <div class="content">
+          <h5>Welcome To World</h5>
+          <h1>Visit <span class="changecontent"></span></h1>
+          <p></p>
+          <a href="/">Book Place</a>
+      </div>
+  </div>
+  <!-- Home Section End -->
+
+</div>
+
+
+
+
+
+
+
+<br>
+
+   <!-- Filter Section Start -->
+
+  <form action="/" method="GET">
+
+    <div class="input-group">
+
+    <select  name="category" class="form-control ">
+      <option value="all"> All </option>
+      <option value="Hammamet">Hammamet </option>
+      <option value="Mahdia"> Mahdia </option>
+      <option value="Monastir"> Monastir </option>
+      <option value="Sousse">Sousse</option>
+    </select>
+
+
+    <span class="input-group-addon">
+      <!-- <input type="submit" value="Filter" class="btn btn-primary "> -->
+      
+      <button class="btn btn-primary" type="submit" value="Filter">
+        Filter  
+      </button>
+
+    </span>
+
+    </div>
+    
+  </form>
+  <br>
+<!-- Filter Section End -->
+
+
+    <!-- Section Packages Start -->
+
+
+    <section class="packages" id="packages">
+      <div class="container">
+      
+        <div class="main-txt">
+          <h1><span>Hotels</span> Collections</h1>
+  
+        </div>
+
+
+
+
+    <% if (hotels.length === 0) { %>
+      <div class="alert alert-danger">
+        There is no Hotels
+      </div>
+     
+     <% } else { %>
+      <div class="card_content">
+        <div class="row" >
+          <% for(let hotel of hotels ) { %>
+       
+             <div class="col col-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card">
+                <img src="<%= hotel.image %>" alt="">
+                 <div class="card-body">
+                  <p>
+                  <a href="/hotel/<%= hotel._id%>"> 
+                    <%= hotel.name %> </a> </p>
+    
+                  <h6>  <i class='fas fa-map-marker-alt'></i>
+                    <%= hotel.category %></h6>
+                    
+                  <p>Prix Allinclusive:   <%= hotel.PrixAllinclusive %> <br>
+                   Prix DemiPension:    <%= hotel.PrixDemiPension %> <br>
+                   Prix PetitDejeuner:  <%= hotel.PrixpetitDejeuner %>
+    
+    
+                  </p>
+                  <div class="star">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star "></i>
+                    <i class="fa-solid fa-star "></i>
+                  </div>
+                  <h6> <strong>Prix:<%= hotel.price %> DT</strong></h6>
+       
+       
+              
+       
+               
+                 <form action="/pre-booking" method="POST" class="Add-to-cart-form">
+                     <input type="hidden" name="name" value="<%= hotel.name %>">
+                     <input type="hidden" name="price" value="<%= hotel.price %>">
+                     <input type="hidden" name="image"      value=" <%= hotel.image %>">
+                     
+                     <input type="hidden" name="PrixAllinclusive" value="<%= hotel.PrixAllinclusive %>">
+                     <input type="hidden" name="PrixDemiPension" value="<%= hotel.PrixDemiPension %>">
+                     <input type="hidden" name="PrixpetitDejeuner" value="<%= hotel.PrixpetitDejeuner %>">
+       
+       
+                     <input type="hidden" name="hotelId" value="<%= hotel._id%>">
+                     <input type="hidden" name="redirectTo" value="/hotel/<%= hotel._id%>">
+                     <!-- <input type="submit" value ="Pre-booking" class="btn btn-primary btn-lg btn-block">      -->
+       
+             </form>
+                  
+                     
+                 </div>
+               </div>
+             </div>
+       
+           <% } %>
+         </div>
+      </div>
+    
+       <% } %>
+
+
+        </div>
+      </div>
+
+    </section>
+
+
+   
+
+    <!-- Section Packages End -->
+
+
+
+
+
+       <!-- Section Services Start -->
+       <section class="services" id="services">
+        <div class="container">
+  
+          <div class="main-txt">
+            <h1><span>Hotels</span> Services</h1>
+          </div>
+          <div class="card_content">
+
+            <div class="row" >
+  
+              <div class="col-md-4 py-3 py-md-0">
+    
+                <div class="card">
+                  <i class="fas fa-hotel"></i>
+                  <div class="card-body">
+                    <h3>Affordable Hotel</h3>
+                    <p> </p>
+                  </div>
+                </div>
+    
+              </div>
+              <div class="col-md-4 py-3 py-md-0">
+    
+                <div class="card">
+                  <i class="fas fa-utensils"></i>
+                  <div class="card-body">
+                    <h3>Food & Drinks</h3>
+                    <p></p>
+                  </div>
+                </div>
+    
+              </div>
+              <div class="col-md-4 py-3 py-md-0">
+    
+                <div class="card">
+                  <i class="fas fa-bullhorn"></i>
+                  <div class="card-body">
+                    <h3>Safty Guide</h3>
+                    <p></p>
+                  </div>
+                </div>
+    
+              </div>
+    
+    
+    
+            </div>
+    
+    
+            <div class="row">
+    
+              <div class="col-md-4 py-3 py-md-0">
+    
+                <div class="card">
+                  <i class="fas fa-globe-asia"></i>
+                  <div class="card-body">
+                    <h3>Around The World</h3>
+                    <p></p>
+                  </div>
+                </div>
+    
+              </div>
+              <div class="col-md-4 py-3 py-md-0">
+    
+                <div class="card">
+                  <i class="fas fa-plane"></i>
+                  <div class="card-body">
+                    <h3>Fastest Travel</h3>
+                    <p></p>
+                  </div>
+                </div>
+    
+              </div>
+              <div class="col-md-4 py-3 py-md-0">
+    
+                <div class="card">
+                  <i class="fas fa-hiking"></i>
+                  <div class="card-body">
+                    <h3>Adventures</h3>
+                    <p></p>
+                  </div>
+                </div>
+    
+              </div>
+    
+    
+    
+            </div>
+    
+          </div>
+          </div>
+  
+          
+
+
+      </section>
+      <!-- Section Services End -->
+
+
+
+
+
+         <!-- Section Gallary Start -->
+    <section class="gallary" id="gallary">
+      <div class="container">
+
+        <div class="main-txt">
+          <h1><span>Hotels</span> Gallary</h1>
+        </div>
+
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <!-- <img src="./photos/g1.png" alt="" height="230px"> -->
+              <img src="./photos/iberostar-selection-royal.jpg" alt="" height="230px">
+
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img src="./photos/venus-beach-aquaparc.jpg" alt="" height="230px">
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img src="./photos/Movenpicktunis.webp" alt="" height="230px">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img src="./photos/marhaba-beach.jpg" alt="" height="230px">
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img src="./photos/hotel-royal-azur-thalassa.jpg" alt="" height="230px">
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img src="./photos/hotels.jpg" alt="" height="230px">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- Section Gallary End -->
+
+
+
+     <!-- Footer Start -->
+     <footer id="footer">
+      <h1><span>Booking</span> Travel</h1>
+      <p>Discover your country ,Tunisia is  the very beautiful country in the World</p>
+      <div class="social-links">
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-pinterest-p"></i>
+      </div>
+      <div class="credit">
+        <p>Designed By <a href="#">Hammadi Oumaima</a></p>
+      </div>
+      <div class="copyright">
+        <p>&copy;Copyright . All Rights Reserved</p>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+
+    
+
+
+
+
+
+</div>
+
+
+ 
+<%- include('parts/footer') %>

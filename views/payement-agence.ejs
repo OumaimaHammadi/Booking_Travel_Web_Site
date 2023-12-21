@@ -1,0 +1,256 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+
+<link rel="stylesheet" href="/payement-agence.css">
+
+
+
+
+<section class="payement-agence" id="payement-agence">
+
+<div class="container ">
+
+
+<div class="row" >
+
+
+<div class="col-md-6 py-3 py-md-0">
+
+ 
+        <% for(let item of items ) { %>
+            <div class="card" > 
+
+
+
+ <img src= "/<%= item.image %> " > 
+   
+
+
+ <div class="main-text">
+     <h1> Hotel: <span><%= item.name %></span></h1> 
+     <h1> Price: <span> <%= item.price %></span></h1>
+     <h1>Arrivée:<span> <%= item.Arrivee %></h1>
+  
+
+     <h1> Départ:<span><%= item.Arrivee + item.NbreNuit %></span></h1>
+   <h1>Nuit(s): <span> <%= item.NbreNuit %></span></h1>
+
+
+   <h1>  Chambre(s):<span> <%= item.NbreChambre %></span></h1>
+   <h1> Adulte(s):<span><%= item.NbreAdult %></span></h1>
+   <h1>Enfant(s) :<span><%= item.NbreEnfant %></span></h1>
+
+    
+   
+ </div>
+</div> 
+
+ <% } %>
+
+
+
+
+     </div>
+
+<!--Coordonée & Agence-->
+  
+   
+      
+        <div class="col-md-6 py-3 py-md-0">
+
+            <div class="card">
+                <div class="coordonnees" >
+                    <h1>
+                        <i class='far fa-edit'></i>
+                        Entrez vos coordonnées
+        
+                    </h1>
+
+
+
+                    <form action="/payement-agence" method="POST"  class="form-coordonees">
+
+
+               
+                        <select  name="Civilite" class="form-control" placeholder="Civilité" class="select">
+                         <option value="" > Choisir une civilité
+                         </option>
+                         <option value="Mr">Mr </option>
+                         <option value="Mme"> Mme </option>
+                         <option value="Mlle"> Mlle </option>
+                        
+               </select>
+
+               <% let CiviliteErrors = validationErrors.find(err => err.param === 'Civilite') %>
+                 <% if (CiviliteErrors) { %>
+                     <p class="alert alert-danger">
+                         <%- CiviliteErrors.msg %>
+                     </p>
+                 <% } %>
+               
+             
+                 <input type="text" class="form-control" name="Prenom" placeholder="Prénom" class="input">
+                 <% let PrenomErrors = validationErrors.find(err => err.param === 'Prenom') %>
+                 <% if (PrenomErrors) { %>
+                     <p class="alert alert-danger">
+                         <%- PrenomErrors.msg %>
+                     </p>
+                 <% } %>
+
+                 
+                 <input type="text" class="form-control" name="Nom" placeholder="Nom">
+                 <% let NomErrors = validationErrors.find(err => err.param === 'Nom') %>
+                 <% if (NomErrors) { %>
+                     <p class="alert alert-danger">
+                         <%- NomErrors.msg %>
+                     </p>
+                 <% } %>
+
+                 
+                 <input type="email" class="form-control" name="Email" placeholder="Email">
+                 <% let EmailErrors = validationErrors.find(err => err.param === 'Email') %>
+                 <% if (EmailErrors) { %>
+                     <p class="alert alert-danger">
+                         <%- EmailErrors.msg %>
+                     </p>
+                 <% } %>
+
+                 
+                 <input type="tel" class="form-control" name="Portable" placeholder="Portable">
+                 <% let PortableErrors = validationErrors.find(err => err.param === 'Portable') %>
+                 <% if (PortableErrors) { %>
+                     <p class="alert alert-danger">
+                         <%- PortableErrors.msg %>
+                     </p>
+                 <% } %>
+                 <br>
+
+               
+        
+        
+        
+                 
+             
+             
+             </form>
+
+
+
+
+
+
+                     </div>
+
+                
+             </div>
+
+  
+
+     <br>
+     
+    
+    <div class="card">
+        <div class="agence" > 
+            <h1>       
+                <!-- <i class='fas fa-hotel'></i> -->
+                <!-- <i class="fa fa-map-marker">       </i> -->
+                <i class='fas fa-map-marker-alt'></i>
+
+
+
+                 Sélectionnez l'agence la plus proche de vous 
+            </h1>
+
+            <form action="/payement-agence" method="POST"  class="form-agence">
+
+
+            <select  name="Civilite" class="form-control" placeholder="Civilité">
+                    <option value="" > 
+                                        <h6> Agences Tunis  </h6>                                      </h6>
+
+    
+                    </option>
+                    <option value="Mr"> Lac 1 </option>
+                    <option value="Mme"> Lac 2 </option>
+                    <option value="Mlle"> Carthage</option>
+
+                
+             
+               
+      </select>
+
+
+      <select  name="Civilite" class="form-control" placeholder="Civilité">
+        <option value="" > Agences Sousse
+        </option>
+        <option value="Mr"> Sousse Ville </option>
+        <option value="Mme"> Hammam Sousse </option>
+        <option value="Mlle"> Shaloul</option>
+       
+     </select>
+
+
+     <select  name="Civilite" class="form-control" placeholder="Civilité">
+        <option value="" > Agences Kairaoun
+        </option>
+        <option value="Mr"> Kairaoun Ville </option>
+        <option value="Mme"> ..... </option>
+        <option value="Mlle"> .....</option>
+       
+     </select>
+
+
+     <select  name="Civilite" class="form-control" placeholder="Civilité">
+        <option value="" > Agences Kef
+        </option>
+        <option value="Mr"> Kef Ville </option>
+        <option value="Mme"> ..... </option>
+        <option value="Mlle"> ......</option>
+       
+     </select>
+
+
+
+     <select  name="Civilite" class="form-control" placeholder="Civilité">
+        <option value="" > Agences Beja
+        </option>
+        <option value="Mr"> Beja Ville </option>
+        <option value="Mme"> ..... </option>
+        <option value="Mlle"> ......</option>
+       
+     </select>
+
+
+
+     <select  name="Civilite" class="form-control" placeholder="Civilité">
+        <option value="" > Agences Kasrine
+        </option>
+        <option value="Mr"> Kasrine Ville </option>
+        <option value="Mme"> ..... </option>
+        <option value="Mlle"> ......</option>
+       
+     </select>
+
+            </form>
+
+    
+         </div>
+
+    </div>
+    <form    action="/thanks" >
+
+
+    <input type="submit" value="Validez " class="btn btn-primary btn-lg btn-block">
+    </form>
+   
+
+        </div>
+    
+
+      
+
+</section>
+
+
+<%- include('parts/footer') %>

@@ -1,0 +1,148 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+<link rel="stylesheet" href="/preBooking.css">
+
+
+
+
+<section class="pre-booking" id="pre-booking">
+
+
+
+
+<div class="container">
+<% if(items.length === 0) { %>
+    <p class="alert alert-danger"> Il n'y a pas de pré-réservation</p>
+
+<% } else {  %>
+
+    
+
+    <table class="table">
+        <thead>
+            <th> N° </th> 
+            <th>Hotel name</th>
+            <th>Prix/Personne</th>
+            <th>Arrivée</th>
+            <th>Nuits</th>
+            <th>Chambre(s) </th>            
+
+            <th>Adulte(s)</th>
+            <th>Enfant(s)</th>
+       
+
+
+         
+            <!-- <th> Supplément</th> -->
+            <th> Total</th>
+
+            <th>   </th>
+            <th>   </td>
+        </thead>
+    <tbody>
+        <% if(  validationError ){ %>
+            <p class="alert alert-danger">
+              <%= validationError.msg %>
+            </p>
+            <% } %>
+       
+
+      <%  for ( let i = 0 ; i< items.length ;  i++) {  %>
+        
+
+        <tr>
+            <td data-label="N°"> <%= i+1 %> </td>
+            <td data-label="Hotel name"><%= items[i].name %> </td>
+            <td data-label="Prix/Personne"><%= items[i].price %></td>
+            <td data-label="Arrivée">   <%= items[i].Arrivee%></td>
+             <td data-label="Nuits"> <%= items[i].NbreNuit%>             </td>
+             <td data-label="Chambre(s)"><%= items[i].NbreChambre%> 
+             </td>
+            <td data-label="Adulte(s)"> <%= items[i].NbreAdult%> </td>
+            <td data-label="Enfant(s)"> <%= items[i].NbreEnfant%> </td>
+
+       
+
+                
+
+         
+
+            <form  method="POST">
+               
+    <!-- <td> <input type="text" name = "NbreChambre"  class="form-control" value="<%=items[i].NbreChambre  %> " > </td> -->
+    
+    <!-- <td data-label="Supplément">PrixAllinclusive :<%= items[i].PrixAllinclusive %></td> -->
+    <td data-label="Total"> <%= items[i].price * items[i].NbreChambre %> Dt</td>
+
+
+
+               
+<td>
+
+    <div class="boutons">
+
+    <input type="hidden" name="cardId" value="<%= items[i]._id %>" >
+    <input type="submit"  class="btn btn-success"   value ="Save" formaction="/pre-booking/save" >
+    <input type="submit"  class="btn btn-danger"   value ="Delete" formaction="/pre-booking/delete">
+    <input type="submit"  class="btn btn-danger"   value ="Delete All" formaction="/pre-booking/deleteAll">
+ 
+
+
+   </div>
+
+</td>
+            </form>  
+            <td>
+                <form action="/reservation" method="POST" class="Add-to-cart-form">
+
+                    <input type="hidden" name="name" value="<%= items[i].name %>"> 
+                    <input type="hidden" name="price" value="<%= items[i].price %>" >
+                    <input type="hidden" name="image"  value=" <%= items.image %>">
+
+
+                    <input type="hidden" name="Arrivee" value="<%= items[i].Arrivee %>">
+                    <input type="hidden" name="NbreNuit" value="<%= items[i].NbreNuit %>">
+                    <input type="hidden" name="NbreChambre" value="<%= items[i].NbreChambre %>">
+                    <input type="hidden" name="NbreAdult" value="<%= items[i].NbreAdult %>">
+                    <input type="hidden" name="NbreEnfant" value="<%= items[i].NbreEnfant %>">
+
+
+                    <input type="hidden" name="PrixAllinclusive"    value="<%= items[i].PrixAllinclusive %>">
+                    <input type="hidden" name="PrixDemiPension"     value="<%= items[i].PrixDemiPension %>">
+                    <input type="hidden" name="PrixpetitDejeuner"   value="<%= items[i].PrixpetitDejeuner %>"> 
+
+
+
+
+
+                <div class="bouton_reserver">
+                    <input type="hidden" name="cardId" value="<%= items[i]._id%>">
+                    <input type="submit"  class="btn btn-primary"   value ="Réserver" >
+
+                </div>
+
+
+                  
+      
+            </form>
+
+           
+
+</td>
+
+            
+            </div>
+            
+
+        </tr>
+        <% } %>
+    </tbody>
+    </table>
+    <% } %>
+</div>
+
+
+</section>
+
+<%- include('parts/footer') %>

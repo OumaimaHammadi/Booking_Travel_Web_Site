@@ -1,0 +1,154 @@
+
+/* payement-agence*/
+
+.payement-agence .card .main-text h1{
+    
+
+
+    font-size:larger;
+
+
+}
+
+
+.payement-agence  .btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+
+
+
+.payement-agence .agence h1{
+    /* font-size:x-large;*/
+    font-size: 20px;
+ 
+    font-weight: 600;
+    
+    color:#ffa500;
+ 
+     text-shadow: 0px 1px 1px black;
+ 
+ 
+ 
+     margin-bottom: 30px;
+     margin-top: 5px;
+ 
+ 
+ 
+     /* text-align: center; */
+ }
+
+
+
+ 
+.payement-agence .agence .select{
+    margin-left: 5px;
+
+}
+
+
+
+
+
+/* .payement-agence .card .agence{
+    margin-top: 10px;
+} */
+
+
+/* .payement-agence .card .coordonnees{
+    width: 300px;
+    margin: 10%;
+    padding: 10%;
+} */
+
+.payement-agence .card .coordonnees .form-coordonees{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    padding-bottom: 10px;
+
+
+} 
+
+@media (max-width:765px){
+    .payement-agence .card .coordonnees .form-coordonees .select #option{
+        padding-right: 0px;
+    
+    }
+    
+}
+
+.payement-agence .card .coordonnees .form-coordonees .input {
+    margin-bottom: 5px;
+
+}
+
+
+
+.payement-agence .coordonnees h1{
+    /*font-size:larger;*/
+
+    font-size: 20px;
+
+    font-weight: 600;
+    color:#ffa500;
+ 
+     text-shadow: 0px 1px 1px black;
+ 
+ 
+ 
+     margin-bottom: 30px;
+     margin-top: 5px;
+
+    /* text-align: center; */
+}
+
+
+
+.payement-agence .card i{
+    /* font-size: 80px; */
+
+    text-align: center;
+    color: #ffa500;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+
+.payement-agence .card{
+    margin-top: 20px;
+}
+
+
+
+
+.payement-agence .card .agence .form-agence{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    padding-bottom: 20px;
+
+
+} 
+
+.payement-agence .card .agence .form-agence  h6{
+    
+}
+
+
+
+
+@media (max-width:905px){
+    .payement-agence .card .agence .form-agence .select {
+        background-color: red;
+
+
+        /* padding-right: 10px; */
+    
+    }
+    
+}

@@ -1,0 +1,29 @@
+.container{
+    text-align: center;
+}
+
+
+.btn{
+
+    margin-bottom:10px;
+    margin-top:10px;
+    padding: 10px;
+
+
+}
+
+
+input{
+    margin-top: 10px; ;
+
+}
+
+
+
+h1{
+    margin-top:10px;
+    font-size:x-large;
+    font-weight: 700;
+
+    
+}

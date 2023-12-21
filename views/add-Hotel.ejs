@@ -1,0 +1,219 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+
+<link rel="stylesheet" href="/add_Hotels.css">
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h1>Add Tunisian Hotel</h1>
+            <form action="/admin/add" method="POST" enctype="multipart/form-data">
+            <input type="text" class="form-control" name="name" placeholder="name">
+            <% let nameErrors = validationErrors.find(err => err.param === 'name') %>
+            <% if (nameErrors) { %>
+                <p class="alert alert-danger">
+                    <%- nameErrors.msg %>
+                </p>
+            <% } %>
+        
+            <input type="number" class="form-control" name="price" placeholder="Prix/Personne">
+            <% let priceErrors = validationErrors.find(err => err.param === 'price') %>
+            <% if (priceErrors) { %>
+                <p class="alert alert-danger">
+                    <%- priceErrors.msg %>
+                </p>
+            <% } %>
+        
+        
+           
+            <span class="input-group-text">Supplément</span>
+
+            <div class="input-group">
+                <!-- <span class="input-group-text" id="basic-addon1">All Inclusive</span> -->
+        
+            
+        
+                <input type="text" aria-label="PrixAllinclusive" class="form-control" name="PrixAllinclusive" placeholder=" Prix All Inclusive"><br>
+                <% let PrixAllinclusiveErrors = validationErrors.find(err => err.param === 'PrixAllinclusive') %>
+            <% if (PrixAllinclusiveErrors) { %> 
+         
+                <p class="alert alert-danger">
+                    <%- PrixAllinclusiveErrors.msg %>
+                </p>
+            <% } %>
+
+
+
+            <input type="text" aria-label="PrixDemiPension" class="form-control" name="PrixDemiPension" placeholder=" Prix Demi Pension"><br>
+            <% let PrixDemiPensionErrors = validationErrors.find(err => err.param === 'PrixDemiPension') %>
+            <% if (PrixDemiPensionErrors) { %>
+                <p class="alert alert-danger">
+                    <%- PrixDemiPensionErrors.msg %>
+                </p>
+            <% } %>
+
+
+
+            <input type="text" aria-label="PrixpetitDejeuner" class="form-control" name="PrixpetitDejeuner"  placeholder=" Prix Petit Déjeuner">
+        
+            <% let PrixpetitDejeunerErrors = validationErrors.find(err => err.param === 'PrixpetitDejeuner') %>
+            <% if (PrixpetitDejeunerErrors) { %>
+                <p class="alert alert-danger">
+                    <%- PrixpetitDejeunerErrors.msg %>
+                </p>
+            <% } %>
+
+
+     
+    
+          </div>
+          <input type="text" class="form-control" name="description" placeholder="Description">
+          <% let descriptionErrors =  validationErrors.find(err => err.param === 'description') %>
+          <% if (descriptionErrors) { %>
+              <p class="alert alert-danger">
+                  <%- descriptionErrors.msg %>
+              </p>
+          <% } %>
+
+
+          <select  name="category" class="form-control" placeholder="category">
+            <option value="" selected> Choose a destination </option>
+            <option value="Sousse">Sousse </option>
+            <option value="Monastir"> Monastir </option>
+            <option value="Mahdia"> Mahdia </option>
+            <option value="Djerda">Djerda</option>
+            <option value="Hammamet">Hammamet</option>
+          </select>
+            <% let categoryErrors = validationErrors.find(err => err.param === 'category') %>
+                        <% if (categoryErrors) { %>
+                            <p class="alert alert-danger">
+                                <%- categoryErrors.msg %>
+                            </p>
+                        <% } %>
+
+
+                        <input type="file" class="form-control" name="image" placeholder="image">
+                        <% let imageErrors = validationErrors.find(err => err.param === 'image') %>
+                              <% if (imageErrors) { %>
+                                  <p class="alert alert-danger">
+                                      <%- imageErrors.msg %>
+                                  </p>
+                              <% } %>
+                              <input type="submit" value="Add Tunisian Hotel " class="btn btn-primary">
+
+             </form>
+         
+        
+        
+        </div>
+    </div>
+
+
+
+        
+            
+               
+       
+        
+        
+        
+                <!-- <span class="input-group-text" id="basic-addon1">Petit Déjeuner</span> -->
+        
+        
+        
+                <!-- <input type="text" aria-label="PetitDéjeuner" class="form-control" placeholder="Petit déjeuner"> -->
+            
+        
+        
+        
+          
+        
+         
+           
+               
+         
+                  
+          
+        
+        
+        
+
+
+   
+   
+
+
+<!-- Add Organized Trip
+ -->
+
+    <!--container text-center-->
+    <div class="card">
+        <div class="card-body">
+
+
+<h1>Add Organized Trip</h1>
+<form action="/admin/add" method="POST" enctype="multipart/form-data">
+<input type="text" class="form-control" name="name" placeholder="name">
+<% let TripnameErrors = validationErrors.find(err => err.param === 'name') %>
+<% if (nameErrors) { %>
+    <p class="alert alert-danger">
+        <%- nameErrors.msg %>
+    </p>
+<% } %>
+
+<input type="number" class="form-control" name="price" placeholder="price">
+<% let TrippriceErrors = validationErrors.find(err => err.param === 'price') %>
+<% if (priceErrors) { %>
+    <p class="alert alert-danger">
+        <%- priceErrors.msg %>
+    </p>
+<% } %>
+<input type="text" class="form-control" name="description" placeholder="description">
+<% let TripdescriptionErrors =  validationErrors.find(err => err.param === 'description') %>
+<% if (descriptionErrors) { %>
+    <p class="alert alert-danger">
+        <%- descriptionErrors.msg %>
+    </p>
+<% } %>
+
+   
+    <select  name="category" class="form-control" placeholder="category">
+      <option value="" selected> Choose a destination </option>
+      <option value="Egypte">Egypte </option>
+      <option value="France"> France </option>
+      <option value="Allemagne"> Allemagne </option>
+      <option value="Canada">Canada</option>
+      <option value="Turquie">Turquie</option>
+</select>
+<% let TripcategoryErrors = validationErrors.find(err => err.param === 'category') %>
+      <% if (categoryErrors) { %>
+          <p class="alert alert-danger">
+              <%- categoryErrors.msg %>
+          </p>
+      <% } %>
+      
+<input type="file" class="form-control" name="image" placeholder="image">
+<% let TripimageErrors = validationErrors.find(err => err.param === 'image') %>
+      <% if (imageErrors) { %>
+          <p class="alert alert-danger">
+              <%- imageErrors.msg %>
+          </p>
+      <% } %>
+      
+<input type="submit" value="Add Organized Trip" class="btn btn-primary">
+
+
+
+</form>
+
+    </div>
+
+    </div>
+
+</div>
+
+
+
+<%- include('parts/footer') %>

@@ -1,0 +1,86 @@
+.star i{
+    font-size: 15px;
+}
+
+.star .checked{
+    color: #ffa500;
+}
+
+
+
+h1{
+
+    padding: 10px;
+
+    background: #ffa500;
+    color: white;
+    border-radius: 5px;
+}
+
+
+.card{
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+}
+
+.card .card-body{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    padding-bottom: 20px;
+}
+
+
+.card .card-one{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+}
+
+.card .card-one .btn{
+    margin-top: 20px;
+
+
+}
+
+
+.card .card-body h6{
+    font-size: 20px;
+
+}
+
+.card .card-body p{
+    margin-top: 10px;
+}
+
+
+
+.card .card-body h2{
+    margin-top: 10px;
+
+    font-size: 20px;
+    font-weight: 200;
+
+}
+
+
+
+
+.card .card-one input {
+    margin-top: 10px;
+}
+
+
+
+
+.card .card-one textarea {
+    margin-top: 10px;
+}
+
+

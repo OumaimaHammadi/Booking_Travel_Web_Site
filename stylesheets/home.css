@@ -1,13 +1,31 @@
 /* Home Section Start */
-.home{
+
+/* .home-container{
+  max-width: 1800px;
+  margin: 40px 0px;
+  padding: 25px 10px;
+  background: #ffffff; 
+  border-radius: 12px; 
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+
+   
+} */
+/* .container {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: 90vh;
+} */
+
+.home{
+
+width: 100vw;  
+    height:90vh;
     background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(./photos/sidibousid.jpg);
- 
-  
-   background-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
 }
+
 .home .content{
     text-align: center;
     padding-top: 200px;
@@ -110,8 +128,31 @@
 }
 /* Home Section End */
 
+form{
+    margin-top: 20px;
+}
+/* button .btn .btn-primary{
+    margin-right: 20px;
 
+} */
 
+.input-group{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.input-group select{
+  width: 100%;
+  height: 48px;
+  border-radius: 10px;
+}
+
+.input-group .btn{
+  height: 48px;
+  padding: 0 25px;
+  border-radius: 10px;
+}
 
 
 /* Section Packages Start */
@@ -176,21 +217,19 @@
 /* Section Services Start */
 
 
-.services{
-    /* background: #f9f9f9; */
-background-color: bisque;
-/* background: transparent; */
-
-
-    margin-top: 50px;
+.services {
+    width: 100%;             
+    background-color: bisque;
+    margin: 50px 0;           
+    padding: 30px 0;
 }
-/* .services .card{
-    box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
-    border: none;
-    cursor: pointer;
-} */
 
-
+.services .container {
+    width: 100%;
+    max-width: 1900px; 
+    margin: 0 auto;         
+    padding: 0 40px;
+}
 
 
 .services .card{
@@ -201,9 +240,6 @@ background-color: bisque;
     margin-bottom: 30px;
 
 }
-
-
-
 
 .services .card i{
     font-size: 80px;
@@ -229,6 +265,7 @@ background-color: bisque;
 /* Section Gallary Start */
 .gallary{
     margin-top: 50px;
+    margin-bottom: 100px;
 }
 .gallary .card{
     border-radius: 10px;

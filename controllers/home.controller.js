@@ -1,5 +1,4 @@
-
-const hotelsModel = require('../models/hotel.model') // je fais  l'inportation de fichier product.model
+const hotelsModel = require('../models/hotel.model') 
 
 
 exports.getHome = (req,res,next) => {

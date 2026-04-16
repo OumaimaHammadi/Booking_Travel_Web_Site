@@ -1,0 +1,178 @@
+<div class="m-booking-container">
+    <form action="/admin/booking" method="GET" class="bouttons">
+
+
+
+<input type="submit"  class="btn btn-primary  btn-lg "  name="status"  value ="ALL   ">
+<input type="submit"  class="btn btn-warning  btn-lg mb-6 "   name="status" value ="WAITNG">
+<input type="submit"  class="btn btn-success btn-lg mb-6"  name="status"  value ="CHECK-IN">
+
+
+<input type="submit"  class="btn btn-danger btn-lg  mb-6 " name="status"  value ="CHECK-OUT">
+
+
+</form>
+
+</div>
+
+
+
+<div class="container">
+ 
+  
+  <form>
+    <div class="input-group">
+    <input id="email" type="email" class="form-control" name="email" placeholder="Email of User"> 
+  <span class="input-group-addon">
+        <input type="submit" value="Search" class="btn btn-primary ml-2"> 
+
+      </span>
+
+
+    </div>
+
+    
+
+   
+  </form>
+
+</div>
+
+ 
+
+<div class="container">
+    <% if( bookings.length === 0) { %>
+        <p class="alert alert-danger">There is no booking </p>
+        <% } else {  %>
+
+
+
+
+<table class="table">
+    <thead>
+        <th> N°</th> 
+        <th> Username</th> 
+
+        <th> Email</th> 
+
+        <th> Hotel name </th>
+
+        <th>Price/Person </th>
+        <th>Adult(s)</th>
+        <th>Children</th>
+        <th>Child Age</th>
+
+
+        <th>Room(s)</th>
+        <th>Night(s)</th>
+        <th>Supplement</th>
+        <th>Total</th>
+        <th>Arrival</th>
+        <th>Departure</th>
+
+        <th> Status </th>
+
+        <th> Time </th>
+        <th>     </th>
+
+    </thead>
+        <tbody>
+            <%  for ( let i = 0 ; i< bookings.length ;  i++) {  %>
+
+            <tr>
+                <td data-label="N°"> <%= i+1 %> </td>
+                <td data-label="Username"> <%= bookings[i].username %> </td>
+
+                <td data-label="Email"> <%= bookings[i].email %> </td>
+
+
+                <td data-label="Hotel name"> <%= bookings[i].name %> </td>
+                <td data-label="Prix/Personne"> <%=bookings[i].price %> dt</td>
+                <td data-label="NbreChambre"> <%=bookings[i].NbreChambre %> </td>
+                <td data-label="Supplement"> <%=bookings[i].supplement%> </td>
+                <td data-label="Total">  <%= bookings[i].price * bookings[i].NbreChambre %> Dt</td>
+
+                <td data-label="Status">   <select name="status" class="form-control-left">
+                      <option value="WAITNG"   <%= bookings[i].status === "WAITNG" ? "selected" : "" %>> WAITNG</option>
+                      <option value="CHECK-IN"   <%= bookings[i].status === "CHECK-IN" ? "selected" : "" %>>CHECK-IN</option>
+                      <option value="CHECK-OUT"  <%= bookings[i].status === "CHECK-OUT" ? "selected" : "" %>>  CHECK-OUT</option>
+                  </select></td>
+                <td data-label="Time"> 
+                    <%= new Date(Number(bookings[i].timestamp)).toLocaleString('fr-FR') %>
+
+                </td>
+                  
+               
+                
+
+                <td> <input type="submit"  class="btn btn-success"   value ="Save" formaction="/admin/reservation" ></td>
+
+
+
+
+                
+                
+
+
+
+            </tr>
+
+
+            <% } %>
+
+        </tbody>
+</table>
+
+
+
+
+
+        <% }  %>    
+
+    </div>
+
+
+         
+
+
+
+    ********************
+    total
+        <td data-label="Total" name="total" value="<%=items[i].Subtotal %>" >
+
+
+        <!-- <%= items[i].price * items[i].NbreChambre  %> -->
+
+        <% if(items[i].supplement ===  "All Inclusive") { %>
+
+            <%= items[i].Subtotal %> + <%=items[i].PrixAllinclusive %>
+            = 
+            <%= items[i].Subtotal + items[i].PrixAllinclusive %>
+    
+    
+    
+            <%  } else if (items[i].supplement ===  "Half Board") {  %>
+                <%= items[i].Subtotal %> + <%=items[i].PrixDemiPension %>
+                = 
+
+
+                <%= items[i].Subtotal + items[i].PrixDemiPension %>
+    
+                
+                <%  } else if (items[i].supplement ===  "Breakfast") {  %>
+
+                    <%= items[i].Subtotal %> +  <%=items[i].PrixpetitDejeuner %>
+                    = 
+                    <%= items[i].Subtotal + items[i].PrixpetitDejeuner %>
+    
+            
+                    <% }  else {  %>
+                        <%= items[i].Subtotal %>
+
+                        <%  } %>
+
+        
+       
+    
+
+     </td>

@@ -6,7 +6,7 @@
 
 
 <div class="container text-center">
-    <h1>Page de connexion</h1>
+    <h1>Login page</h1>
     <form action="/login" method="POST">
     <input type="email" class="form-control" name="email" placeholder="email">
     <% let EmailErrors = validationErrors.find(err => err.param === 'email') %>
@@ -23,12 +23,13 @@
         </p>
     <% } %>
      <br>
-    <input type="submit" value="Se connecter " class="btn btn-primary">
+    <input type="submit" value="Login " class="btn btn-primary">
 
 </form>
 
 <div>
-    Vous n'avez pas de compte ? <a href="/signup"> Créer un compte </a>
+    
+   Don't have an account ? <a href="/signup">  Create an account </a>
 </div>
 </div>
 

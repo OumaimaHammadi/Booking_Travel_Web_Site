@@ -10,6 +10,7 @@
 
 /* Navbar Start */
 #navbar{
+    
     background: #f9f9f9;
 }
 #logo{
@@ -26,7 +27,7 @@
     color: #ffa500;
 }
 .navbar-nav{
-    margin-left: 20px;
+    margin-left:20px;
 }
 .nav-item .nav-link{
     font-size: 16px;
@@ -40,10 +41,17 @@
     background: #ffa500;
     color: white;
 }
+#navbar form {
+        margin-left: auto; /* Cela pousse le form vers la droite */
+
+}
+
 #navbar form button{
     background: orange;
     color: white;
     border: none;
+    padding: 8px 16px;
+    cursor: pointer;
 }
 /* Navbar End */
 
@@ -160,47 +168,7 @@
 
 
 /* Footer Start */
-#footer{
-    width: 100%;
-    background-color:paleturquoise;
 
-    margin-top: 150px;
-    text-align: center;
-    /* background: #f9f9f9; */
-
-
-}
-#footer h1{
-    font-weight: 600;
-    padding-top: 30px;
-    text-shadow: 0px 0px 1px black;
-}
-#footer h1 span{
-    color: #ffa500;
-}
-
-
-#footer p{
-
-    font-weight: 600;
-    padding-top: 30px;
-    color: black;
-
-}
-.social-links i{
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 20px;
-    background: black;
-    color: white;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    transition: 0.5s ease;
-    cursor: pointer;
-}
-.social-links i:hover{
-    background: #ffa500;
-}
 /* Footer End */
 
 

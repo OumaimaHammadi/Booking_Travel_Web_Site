@@ -1,0 +1,61 @@
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    margin-top: auto;
+    padding: 10px;
+    background-color:paleturquoise;
+    color: bisque;
+    text-align: center;
+}
+
+
+
+/*footer{
+    margin-top: auto;
+    padding: 10px;
+    background: black;
+    color: bisque;
+    text-align: center;
+}*/
+
+footer .logo a{
+    font-size: 36px;
+    font-weight: 550;
+    padding-top: 30px;
+    color: black;
+    text-shadow: 0px 0px 1px black;
+}
+footer .logo a span{
+    color: #ffa500;
+}
+
+
+footer p{
+
+    font-weight: 600;
+    padding-top: 30px;
+    color: black;
+
+}
+.social-links i{
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: black;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.social-links i:hover{
+    background: #ffa500;
+}
+
+
+
+/* Footer End */

@@ -1,28 +1,7 @@
-
 const HotelModel =require('../models/hotel.model')
-const ManageReservationModel =require('../models/reservation.model')
+const ManageReservationModel =require('../models/booking.model')
 
 const validationResult =require('express-validator').validationResult
-
-exports.getReservations=(req,res,next)=>{
-    ManageReservationModel.getPreBookingByUser(req.session.userId).then(orders =>{
-        //getItemsByOrders
-        res.render('m-reservations',{
-            orders:orders,
-            isUser : true ,
-            //cardId:req.session.userId,
-            //isEmail:req.cardId.email,
-
-            isAdmin :true,
-            pageTitle:'Manage Reservations',
-
-
-
-    })
-
-})}
-
-
 
 exports.getAdd=(req,res,next)=>{
     res.render('add-Hotel',{
@@ -74,11 +53,11 @@ exports.postAdd=(req,res,next)=>{
 
 
 
-/* exports.getReservations=(req,res,next)=>{
+exports.getReservations=(req,res,next)=>{
 
     let status = req.query.status
 
-    let validCategory =['Pending','Waiting','Received']
+    let validCategory =['PENDING','CHECK-IN','CHECK-OUT']
     
     let ReservationsPromise
     if (status && validCategory.includes((status)))
@@ -86,18 +65,15 @@ exports.postAdd=(req,res,next)=>{
     
     else
 
-    ReservationsPromise =  ManageReservationModel.getPreBookingByUser()
+    ReservationsPromise =  ManageReservationModel.getAllBooking()
 
 
 
 
-    ReservationsPromise.then(orders =>{
-        res.render('m-reservations',{
-            orders:orders,
+    ReservationsPromise.then(bookings =>{
+        res.render('m-bookings',{
+            bookings:bookings,
             isUser : true ,
-            //cardId:req.session.userId,
-            //isEmail:req.cardId.email,
-
             isAdmin :true,
             pageTitle:'Manage Reservations',
 
@@ -105,12 +81,26 @@ exports.postAdd=(req,res,next)=>{
 
     })
 
-})} */
+})} 
 
 
 
+exports.postSave = (req, res, next) => {
 
-   
+     console.log(req.body)
+  
+
+  ManageReservationModel.editItem(
+    req.body.PreBookingId,
+    {
+      status: req.body.status,
+      total:req.body.total,
+      timestamp: Date.now()
+    }
+  )
+  .then(() => res.redirect('/admin/booking'))
+  .catch(err => console.log(err))
+}
    
 
 

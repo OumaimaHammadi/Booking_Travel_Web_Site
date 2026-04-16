@@ -1,0 +1,262 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+
+<link rel="stylesheet" href="/booking.css">
+
+
+
+<div class="booking-container">
+    <% if(items.length === 0) { %>
+        <p class="alert alert-danger"> There is no booking </p>
+
+    <% } else {  %>
+
+    <table class="table">
+        <thead>
+            <th > N° </th> 
+            <th > Username </th> 
+            <th > Email </th> 
+
+
+            <th> Hotel name</th>
+            <th> Price / Person </th>
+            <th>Subtotal</th>
+            <th> Supplement</th>
+            <th> Price Supplement</th>
+
+
+            <th> Total</th>
+            <th> </th>
+
+            <th>  </th>
+            <th>   </th>
+            <th>   </th>
+
+        </thead>
+
+    <tbody>
+
+        <% if(  validationError ){ %>
+            <p class="alert alert-danger">
+              <%= validationError.msg %>
+            </p>
+            <% } %>
+       
+
+      <%  for ( let i = 0 ; i< items.length ;  i++) {  %>
+        <tr>
+            <td data-label=" N° ">  <%= i+1 %> </td>
+            <td  data-label=" Username"> <%= items[i].username %> </td>
+            <td  data-label=" Email"> <%= items[i].email %> </td>
+
+           
+
+            <td  data-label=" Hotel name"> <%= items[i].name %> </td>
+            <td data-label="Price"> <%= items[i].price %> dt </td>
+            <form  method="POST">
+               
+    <td data-label="Subtotal"> <%= items[i].Subtotal %> dt
+    </td>
+    <td data-label=" Supplement">
+
+        <select  name="supplement" class="form-control-left"   value="<%=items[i].supplement %>"   >
+      
+              
+            
+            <option value="Price"> <%=items[i].supplement %></option>  
+
+            
+           <option value="All Inclusive"> All inclusive </option> 
+           <option value="Half Board">  Half Board </option>
+           <option value="Breakfast">  Breakfast </option>
+
+         </select> 
+    </td>
+    <td data-label="Price Supplement"> 
+        <% if(items[i].supplement ===  "All Inclusive") { %>
+            Price All inclusive :<%= items[i].PrixAllinclusive %>
+
+
+            <%  } else if (items[i].supplement ===  "Half Board") {  %>
+                Price Half Board :  <%= items[i].PrixDemiPension %>    
+                
+                
+                <%  } else if (items[i].supplement ===  "Breakfast") {  %>
+                    Price Breakfast :   <%= items[i].PrixpetitDejeuner %>
+
+
+                
+                <% }  else {  %>
+                    Supplement Not Chosen
+
+            
+        <% } %>
+    </td>
+
+
+
+
+
+
+      
+     
+     
+     
+     
+     
+     <!-- <td data-label="Total" name="total" value="
+
+    items[i].supplement === 'All Inclusive'
+    ? items[i].Subtotal + items[i].PrixAllinclusive
+    : items[i].supplement === 'Half Board'
+    ? items[i].Subtotal + items[i].PrixDemiPension
+    : items[i].supplement === 'Breakfast'
+    ? items[i].Subtotal + items[i].PrixpetitDejeuner
+    : items[i].Subtotal
+
+
+     "> -->
+      <input type="hidden" name="total" 
+value="<%= 
+    items[i].supplement === 'All Inclusive'
+    ? items[i].Subtotal + items[i].PrixAllinclusive
+    : items[i].supplement === 'Half Board'
+    ? items[i].Subtotal + items[i].PrixDemiPension
+    : items[i].supplement === 'Breakfast'
+    ? items[i].Subtotal + items[i].PrixpetitDejeuner
+    : items[i].Subtotal
+%>">
+<td>
+   
+
+          
+       <% if(items[i].supplement ===  "All Inclusive") { %>
+
+            <%= items[i].Subtotal + items[i].PrixAllinclusive %> dt
+    
+    
+    
+            <%  } else if (items[i].supplement ===  "Half Board") {  %>
+          
+
+
+                <%= items[i].Subtotal + items[i].PrixDemiPension %> dt
+    
+                
+                <%  } else if (items[i].supplement ===  "Breakfast") {  %>
+
+                    
+                    <%= items[i].Subtotal + items[i].PrixpetitDejeuner %> dt
+    
+            
+                    <% }  else {  %>
+                        <%= items[i].Subtotal %>
+
+                        <%  } %>
+
+        
+       
+   
+
+     </td>
+
+  
+
+
+               
+<td>
+    <input type="hidden" name="cardId" value="<%= items[i]._id %>" >
+    <input type="submit"  class="btn btn-success"   value ="Save" formaction="/booking/save" >
+    <input type="submit"  class="btn btn-danger"   value ="Delete" formaction="/booking/delete">
+<!--     <input type="submit"  class="btn btn-danger"   value ="Supprimer tout" formaction="/reservation/deleteAll">
+ -->
+</td>
+            </form>  
+            <td>
+
+                    <form>
+                    <input type="hidden" name="name" value="<%= items[i].name %>">
+                    <input type="hidden" name="price" value="<%= items[i].price %>">
+                    <input type="hidden" name = "NbreChambre"  value="<%= items[i].NbreChambre %>">
+                     
+
+
+                    <input type="hidden" name="image"  value=" <%= items[i].image %>">
+
+                    <input type="hidden" name="PreBookingId" value="<%= items[i]._id%>">
+                    <input type="submit"  class="btn btn-primary"   value ="I Pay Online"  class="Ligne" >
+                </form>
+
+
+      
+
+           
+
+             </td>
+
+                 <td>
+                   <form action=" /payement-agence/<%= items[i]._id %>" >
+                    <!-- method="GET" class="Add-to-cart-form"> -->
+
+
+                        <!-- <input type="hidden" name="name" value="<%= items[i].name %>">
+                        <input type="hidden" name="price" value="<%= items[i].price %>">
+                        <input type="hidden" name="image" value="<%=items[i].image %>">
+
+
+                        <input type="hidden" name="Arrivee" value="<%= items[i].Arrivee %>">
+                        <input type="hidden" name="Departure" value="<%= items[i].Departure %>">
+
+                        <input type="hidden" name="NbreNuit" value="<%= items[i].NbreNuit %>">
+                        <input type="hidden" name="NbreChambre" value="<%= items[i].NbreChambre %>">
+                        <input type="hidden" name="NbreAdult" value="<%= items[i].NbreAdult %>">
+                        <input type="hidden" name="NbreEnfant" value="<%= items[i].NbreEnfant %>">
+    
+    
+                        <input type="hidden" name="PrixAllinclusive"    value="<%= items[i].PrixAllinclusive %>">
+                        <input type="hidden" name="PrixDemiPension"     value="<%= items[i].PrixDemiPension %>">
+                        <input type="hidden" name="PrixpetitDejeuner"   value="<%= items[i].PrixpetitDejeuner %>"> 
+    
+
+                        <input type="hidden" name = "NbreChambre"  value="<%= items[i].NbreChambre %>">
+    
+                        <input type="hidden" name="PreBookingId" value="<%= items[i]._id%>">  -->
+       
+                        <input type="submit"  class="btn btn-info"   value ="I go to the agency"  class="Agence">
+
+
+
+                    </form>
+
+
+
+
+                 </td>
+
+                 <td>   <%= new Date(Number(items[i].timestamp)).toLocaleString('fr-FR') %>
+</td>
+
+
+                </tr>
+                <% } %>
+            
+            
+            
+            </tbody>
+        </table>
+        <% } %>
+            
+</div>            
+
+      
+
+
+
+ 
+
+
+
+ 
+
+<%- include('parts/footer') %>

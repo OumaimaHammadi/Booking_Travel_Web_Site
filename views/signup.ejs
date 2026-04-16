@@ -6,9 +6,9 @@
 
 
 <div class="container text-center">
-    <h1>Créer un compte </h1>
+    <h1>Create an account </h1>
     <form action="/signup" method="POST">
-    <input type="text" class="form-control" name="username" placeholder="Username" autocomplete="on">
+    <input type="text" class="form-control" name="username" placeholder="username" autocomplete="on">
     <% let UsernameErrors = validationErrors.find(err => err.param === 'username') %>
     <% if (UsernameErrors) { %>
         <p class="alert alert-danger">
@@ -38,7 +38,7 @@
             <%= confirmpassword.msg %>
         </p>
     <%} %>
-    <input type="submit" value="Créer un compte " class="btn btn-primary">
+    <input type="submit" value="Create an account " class="btn btn-primary">
 
 
 
@@ -47,8 +47,8 @@
 
 
 
-<div>
-    Vous avez déjà un compte ?  <a href="/login"> se connecter </a>
+<div> Already have an account ?
+    <a href="/login">  Login </a>
 </div>
 </div>
 

@@ -1,17 +1,29 @@
-
-.title-container{
-    padding: 0 10%;
-    margin: 200px  auto 0;
-
+.title-container {
+    max-width: 1200px;
+    padding: 0 5%;
+    margin: 120px auto 60px;
 }
 
-
-
-
-.heading{
-    font-size: 40px;
-    font-weight:900;
+.heading {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 900;
     text-align: center;
-    color:green;
+    color: #2e7d32; /* green élégant */
     margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
 }
+
+/* Ligne décorative sous le titre */
+
+
+/* .heading::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #2e7d32;
+    margin: 15px auto 0;
+    border-radius: 2px;
+} */

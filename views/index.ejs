@@ -6,14 +6,15 @@
 
 
 
-<div class="container">
+<div class="home-container">
+  <div class="container">
 
 <div class="row">
 
      <!-- Home Section Start -->
      <div class="home">
       <div class="content">
-          <h5>Welcome To World</h5>
+          <h5>Welcome To  Tunisia</h5>
           <h1>Visit <span class="changecontent"></span></h1>
           <p></p>
           <a href="/">Book Place</a>
@@ -29,7 +30,7 @@
 
 
 
-<br>
+<!-- <br> -->
 
    <!-- Filter Section Start -->
 
@@ -46,19 +47,19 @@
     </select>
 
 
-    <span class="input-group-addon">
+    <!-- <span class="input-group-addon"> -->
       <!-- <input type="submit" value="Filter" class="btn btn-primary "> -->
       
       <button class="btn btn-primary" type="submit" value="Filter">
         Filter  
       </button>
 
-    </span>
+    <!-- </span> -->
 
     </div>
     
   </form>
-  <br>
+  <!-- <br> -->
 <!-- Filter Section End -->
 
 
@@ -66,11 +67,11 @@
 
 
     <section class="packages" id="packages">
-      <div class="container">
+      <!-- <div class="container"> -->
       
         <div class="main-txt">
-          <h1><span>Hotels</span> Collections</h1>
-  
+          <h1><span>POPULAR</span> HOTELS  </h1>
+   
         </div>
 
 
@@ -86,7 +87,8 @@
         <div class="row" >
           <% for(let hotel of hotels ) { %>
        
-             <div class="col col-12 col-md-6 col-lg-4 col-xl-3">
+             <div class="col col-12 col-md-6 col-lg-3 col-xl-4">
+
               <div class="card">
                 <img src="<%= hotel.image %>" alt="">
                  <div class="card-body">
@@ -97,9 +99,9 @@
                   <h6>  <i class='fas fa-map-marker-alt'></i>
                     <%= hotel.category %></h6>
                     
-                  <p>Prix Allinclusive:   <%= hotel.PrixAllinclusive %> <br>
-                   Prix DemiPension:    <%= hotel.PrixDemiPension %> <br>
-                   Prix PetitDejeuner:  <%= hotel.PrixpetitDejeuner %>
+                  <p>All-inclusive price:  <%= hotel.PrixAllinclusive %> <br>
+                 Half Board price:   <%= hotel.PrixDemiPension %> <br>
+                   Breakfast price:  <%= hotel.PrixpetitDejeuner %>
     
     
                   </p>
@@ -107,10 +109,10 @@
                     <i class="fa-solid fa-star checked"></i>
                     <i class="fa-solid fa-star checked"></i>
                     <i class="fa-solid fa-star checked"></i>
-                    <i class="fa-solid fa-star "></i>
+                    <i class="fa-solid fa-star checked"></i>
                     <i class="fa-solid fa-star "></i>
                   </div>
-                  <h6> <strong>Prix:<%= hotel.price %> DT</strong></h6>
+                  <h6> <strong>Price:<%= hotel.price %> DT</strong></h6>
        
        
               
@@ -144,8 +146,7 @@
        <% } %>
 
 
-        </div>
-      </div>
+        <!-- </div> -->
 
     </section>
 
@@ -159,15 +160,17 @@
 
 
        <!-- Section Services Start -->
-       <section class="services" id="services">
-        <div class="container">
+       <section class="services">
+  <div class="container">
   
           <div class="main-txt">
-            <h1><span>Hotels</span> Services</h1>
+          <!-- </br> -->
+            <h1><span>HOTELS</span> SERVICES</h1>
+
           </div>
           <div class="card_content">
 
-            <div class="row" >
+            <div class="row">
   
               <div class="col-md-4 py-3 py-md-0">
     
@@ -263,16 +266,15 @@
 
          <!-- Section Gallary Start -->
     <section class="gallary" id="gallary">
-      <div class="container">
+      <!-- <div class="container"> -->
 
         <div class="main-txt">
-          <h1><span>Hotels</span> Gallary</h1>
+          <h1><span>GALLERY</span> HOTELS</h1>
         </div>
 
         <div class="row" style="margin-top: 30px;">
           <div class="col-md-4 py-3 py-md-0">
             <div class="card">
-              <!-- <img src="./photos/g1.png" alt="" height="230px"> -->
               <img src="./photos/iberostar-selection-royal.jpg" alt="" height="230px">
 
             </div>
@@ -308,33 +310,9 @@
           </div>
         </div>
 
-      </div>
+      <!-- </div> -->
     </section>
-    <!-- Section Gallary End -->
-
-
-
-     <!-- Footer Start -->
-     <footer id="footer">
-      <h1><span>Booking</span> Travel</h1>
-      <p>Discover your country ,Tunisia is  the very beautiful country in the World</p>
-      <div class="social-links">
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-youtube"></i>
-        <i class="fa-brands fa-pinterest-p"></i>
-      </div>
-      <div class="credit">
-        <p>Designed By <a href="#">Hammadi Oumaima</a></p>
-      </div>
-      <div class="copyright">
-        <p>&copy;Copyright . All Rights Reserved</p>
-      </div>
-    </footer>
-    <!-- Footer End -->
-
-
+   
     
 
 
@@ -342,7 +320,7 @@
 
 
 </div>
-
+</div>
 
  
 <%- include('parts/footer') %>

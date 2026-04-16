@@ -1,0 +1,156 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+<link rel="stylesheet" href="/m-booking.css">
+
+
+
+
+
+<div class="m-booking-container">
+    <form action="/admin/booking" method="GET">
+
+      <div class="bouttons">
+
+<input type="submit"  class="btn btn-primary  btn-lg mb-6"  name="status"  value ="ALL">
+
+<input type="submit"  class="btn btn-warning  btn-lg mb-6"  name="status"  value ="PENDING">
+<input type="submit"  class="btn btn-success btn-lg mb-6"  name="status"  value ="CHECK-IN">
+
+
+<input type="submit"  class="btn btn-danger btn-lg  mb-6 " name="status"  value ="CHECK-OUT">
+
+      </div>
+
+
+
+
+</form>
+
+  
+  <form>
+    <div class="input-group">
+    <input id="email" type="email" class="form-control" name="email" placeholder="User's email"> 
+
+      <span class="input-group-addon">
+        <input type="submit" value="Search" class="btn btn-primary ml-2"> 
+
+      </span>
+
+
+    </div>
+
+    
+
+   
+  </form>
+
+  <% if( bookings.length === 0) { %>
+        <p class="alert alert-danger">There is no booking </p>
+        <% } else {  %>
+
+
+
+
+
+    <table class="table">
+        <thead>
+        <th> N°</th> 
+        <th> Username</th> 
+
+        <th> Email</th> 
+
+        <th> Hotel name </th>
+
+        <th>Price/Person </th>
+        <th>Adult(s)</th>
+        <th>Children</th>
+        <th>Child Age</th>
+
+
+        <th>Room(s)</th>
+        <th>Night(s)</th>
+        <th>Supplement</th>
+        <th>Total</th>
+        <th>Arrival</th>
+        <th>Departure</th>
+
+        <th> Status </th>
+
+        <th> Time </th>
+        <th>     </th>
+
+    </thead>
+        <tbody>
+
+
+            <%  for ( let i = 0 ; i< bookings.length ;  i++) {  %>
+
+<tr>
+  <form method="POST" action="/admin/save">
+    
+             <td data-label="N°"> <%= i+1 %> </td>
+                <td data-label="Username"> <%= bookings[i].username %> </td>
+
+                <td data-label="Email"> <%= bookings[i].email %> </td>
+
+
+                <td data-label="Hotel name"> <%= bookings[i].name %> </td>
+                <td data-label="Price" > <%=bookings[i].price %> dt</td>
+                <td data-label="Adult(s)"> <%=bookings[i].NbreAdult %> </td>
+                <td data-label="Children"> <%=bookings[i].NbreEnfant %> </td>
+                <td data-label="Child Age"> <%=bookings[i].ChildAge %> Years</td>
+
+                <td data-label="Room(s)"> <%=bookings[i].NbreChambre %> </td>
+                <td data-label="Night(s)"> <%=bookings[i].NbreNuit%> </td>
+                <td data-label="Supplement"> <%=bookings[i].supplement%> </td>
+
+
+                <!-- <td data-label="Total" >  <%= bookings[i].price * bookings[i].NbreChambre * bookings[i].NbreNuit%> dt </td> -->
+               
+                <td data-label="Total" >  <%= bookings[i].total %> dt </td>
+
+                <td data-label="Arrival">  <%= bookings[i].Arrivee %> </td>
+                <td data-label="Departure">  <%= bookings[i].Departure %> </td>
+
+                <td data-label="Status">   <select name="status" class="form-control-left">
+                      <option value="PENDING"   <%= bookings[i].status === "PENDING" ? "selected" : "" %>> PENDING</option>
+                      <option value="CHECK-IN"   <%= bookings[i].status === "CHECK-IN" ? "selected" : "" %>>CHECK-IN</option>
+                      <option value="CHECK-OUT"  <%= bookings[i].status === "CHECK-OUT" ? "selected" : "" %>>  CHECK-OUT</option>
+
+                  </select></td>
+                <td data-label="Time"> 
+                    <%= new Date(Number(bookings[i].timestamp)).toLocaleString('fr-FR') %>
+
+                </td>
+                  
+                
+
+
+    <td>
+      <input type="hidden" name="PreBookingId" value="<%= bookings[i]._id %>">
+      <input type="hidden" name="total" value="<%= bookings[i].total %>">
+
+      <button type="submit" class="btn btn-success">
+        Save
+      </button>
+    </td>
+
+  </form>
+</tr>
+
+            <% } %>
+
+        </tbody>
+</table>
+
+
+
+
+
+        <% }  %>    
+
+    </div>
+
+
+<%- include('parts/footer') %>

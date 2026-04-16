@@ -1,7 +1,7 @@
 const mongoose =require('mongoose')
 const bcrypt =require('bcrypt')
-//const DB_url ='mongodb://localhost:27017/online-shop'
-const DB_URL='mongodb://127.0.0.1:27017/booking-travel'
+//const DB_URL='mongodb://127.0.0.1:27017/booking-travel'
+const DB_URL='mongodb+srv://hammadiioumaima_db_user:vFSKsZyIxlriCEPa@booking-travel-cluster.ucag5ux.mongodb.net/'
 
 
 
@@ -86,4 +86,14 @@ bcrypt.compare(password,user.password).then(same =>{
     })
 
     })
+}
+
+
+exports.findUserById = (id) => {
+  return mongoose.connect(DB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }).then(() => {
+    return User.findById(id)
+  })
 }

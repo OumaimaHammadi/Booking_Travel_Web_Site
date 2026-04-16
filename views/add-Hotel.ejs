@@ -10,7 +10,7 @@
         <div class="card-body">
             <h1>Add Tunisian Hotel</h1>
             <form action="/admin/add" method="POST" enctype="multipart/form-data">
-            <input type="text" class="form-control" name="name" placeholder="name">
+            <input type="text" class="form-control" name="name" placeholder="Name">
             <% let nameErrors = validationErrors.find(err => err.param === 'name') %>
             <% if (nameErrors) { %>
                 <p class="alert alert-danger">
@@ -18,7 +18,7 @@
                 </p>
             <% } %>
         
-            <input type="number" class="form-control" name="price" placeholder="Prix/Personne">
+            <input type="number" class="form-control" name="price" placeholder="Price / Person">
             <% let priceErrors = validationErrors.find(err => err.param === 'price') %>
             <% if (priceErrors) { %>
                 <p class="alert alert-danger">
@@ -28,14 +28,14 @@
         
         
            
-            <span class="input-group-text">Supplément</span>
+            <span class="input-group-text">Supplement</span>
 
             <div class="input-group">
                 <!-- <span class="input-group-text" id="basic-addon1">All Inclusive</span> -->
         
             
         
-                <input type="text" aria-label="PrixAllinclusive" class="form-control" name="PrixAllinclusive" placeholder=" Prix All Inclusive"><br>
+                <input type="text" aria-label="PrixAllinclusive" class="form-control" name="PrixAllinclusive" placeholder=" All Inclusive Prices"><br>
                 <% let PrixAllinclusiveErrors = validationErrors.find(err => err.param === 'PrixAllinclusive') %>
             <% if (PrixAllinclusiveErrors) { %> 
          
@@ -46,7 +46,7 @@
 
 
 
-            <input type="text" aria-label="PrixDemiPension" class="form-control" name="PrixDemiPension" placeholder=" Prix Demi Pension"><br>
+            <input type="text" aria-label="PrixDemiPension" class="form-control" name="PrixDemiPension" placeholder=" Half Board Price"><br>
             <% let PrixDemiPensionErrors = validationErrors.find(err => err.param === 'PrixDemiPension') %>
             <% if (PrixDemiPensionErrors) { %>
                 <p class="alert alert-danger">
@@ -56,7 +56,7 @@
 
 
 
-            <input type="text" aria-label="PrixpetitDejeuner" class="form-control" name="PrixpetitDejeuner"  placeholder=" Prix Petit Déjeuner">
+            <input type="text" aria-label="PrixpetitDejeuner" class="form-control" name="PrixpetitDejeuner"  placeholder=" Breakfast Price">
         
             <% let PrixpetitDejeunerErrors = validationErrors.find(err => err.param === 'PrixpetitDejeuner') %>
             <% if (PrixpetitDejeunerErrors) { %>
@@ -93,14 +93,18 @@
                             </p>
                         <% } %>
 
+                       
 
-                        <input type="file" class="form-control" name="image" placeholder="image">
+
+     <input type="file" class="form-control" name="image" >
+                   <!-- <input type="file" class="form-control" name="image" placeholder="image"> -->
                         <% let imageErrors = validationErrors.find(err => err.param === 'image') %>
                               <% if (imageErrors) { %>
                                   <p class="alert alert-danger">
                                       <%- imageErrors.msg %>
                                   </p>
                               <% } %>
+              
                               <input type="submit" value="Add Tunisian Hotel " class="btn btn-primary">
 
              </form>
@@ -155,7 +159,7 @@
 
 <h1>Add Organized Trip</h1>
 <form action="/admin/add" method="POST" enctype="multipart/form-data">
-<input type="text" class="form-control" name="name" placeholder="name">
+<input type="text" class="form-control" name="name" placeholder="Name">
 <% let TripnameErrors = validationErrors.find(err => err.param === 'name') %>
 <% if (nameErrors) { %>
     <p class="alert alert-danger">
@@ -163,14 +167,14 @@
     </p>
 <% } %>
 
-<input type="number" class="form-control" name="price" placeholder="price">
+<input type="number" class="form-control" name="price" placeholder="Price / Person">
 <% let TrippriceErrors = validationErrors.find(err => err.param === 'price') %>
 <% if (priceErrors) { %>
     <p class="alert alert-danger">
         <%- priceErrors.msg %>
     </p>
 <% } %>
-<input type="text" class="form-control" name="description" placeholder="description">
+<input type="text" class="form-control" name="description" placeholder="Description">
 <% let TripdescriptionErrors =  validationErrors.find(err => err.param === 'description') %>
 <% if (descriptionErrors) { %>
     <p class="alert alert-danger">
@@ -181,11 +185,11 @@
    
     <select  name="category" class="form-control" placeholder="category">
       <option value="" selected> Choose a destination </option>
-      <option value="Egypte">Egypte </option>
+      <option value="Egypt">Egypt</option>
       <option value="France"> France </option>
-      <option value="Allemagne"> Allemagne </option>
+      <option value="Germany"> Germany </option>
       <option value="Canada">Canada</option>
-      <option value="Turquie">Turquie</option>
+      <option value="Turkey">Turkey</option>
 </select>
 <% let TripcategoryErrors = validationErrors.find(err => err.param === 'category') %>
       <% if (categoryErrors) { %>

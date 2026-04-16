@@ -6,9 +6,9 @@ const authguard = require('./guards/auth.guard')
 const check =require('express-validator').check
 
 
-// router.get('/:id',authguard.isAuth,PayementController.getHotelByid)
+router.get('/:id',authguard.isAuth,PayementController.getBookingByid)
 
-router.get('/',authguard.isAuth,PayementController.getAdd)
+// router.get('/',authguard.isAuth,PayementController.getAdd)
 
 
 router.post('/',authguard.isAuth,bodyParsercart,

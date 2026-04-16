@@ -3,7 +3,9 @@ const check =require('express-validator').check
 const adminController =require('../controllers/admin.controller')
 const adminGuard = require('./guards/admin.guard')
 const multer =require('multer')
+const bodyParser =require('body-parser')
 
+const bodyParserMW = bodyParser.urlencoded ({extended :true})
 
 router.get('/add',adminGuard,adminController.getAdd)
 router.post('/add',adminGuard,multer({
@@ -54,7 +56,8 @@ check('PrixpetitDejeuner')
 
 ,adminController.postAdd)
 
-router.get('/reservation',adminGuard,adminController.getReservations)
+router.get('/booking',adminGuard,adminController.getReservations)
+router.post('/save',adminGuard,bodyParserMW,adminController.postSave)
 
 
 module.exports =router

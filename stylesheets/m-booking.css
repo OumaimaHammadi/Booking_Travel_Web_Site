@@ -1,0 +1,403 @@
+/* .m-booking-container{
+  max-width: 1600px;
+  margin: 40px auto;
+  padding: 25px 30px;
+
+  background: #ffffff; 
+  border-radius: 12px; 
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+
+
+
+/* 4 Boutons*/
+
+/* .bouttons .btn{
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  border: none;
+  color: white;
+  
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  width: 250px;
+  margin: 10px;
+  
+} */
+
+
+
+/*input search*/
+
+/* .form-control{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.input-group-addon .btn{
+  margin-top: 20px;
+
+  margin-bottom: 20px;
+
+
+} */
+
+
+/* Tableau*/
+/* .table{
+    width: 100%;
+    border-collapse: collapse;
+     margin-top: 20px; 
+
+  }
+  
+  
+  .table thead{
+    background-color:#ffa500;
+    }
+
+  
+    .table thead tr th {
+       padding: 16px 12px;
+       font-size: 15px;
+      font-weight:600;
+      letter-spacing:0.35px;
+      color:#FFFFFF;
+      opacity:1;
+      padding:12px;
+      vertical-align:top;
+      border:1px solid #dee2e685;
+  
+      }
+  
+      th,td {
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #ddd;
+      }
+      
+      
+      tbody tr:hover {
+        background-color: #f5f5f5;
+      }
+      
+  
+      .table tbody tr td  .btn{
+        padding: 14px 10px;
+        font-size: 16px;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 100%;
+        margin-bottom: 10px;
+        color:#FFFFFF;
+  
+  
+      }
+  
+  
+      .table tbody tr td .btn .Ligne {
+        color: rebeccapurple;
+      }
+  
+      .table tbody tr td .form-control-left{
+        width:200px;
+        padding: 5px;
+        text-align: center;
+        position: relative;
+        font-family: Arial;
+        background-color: DodgerBlue;
+  
+      } */
+
+
+ 
+
+.m-booking-container{
+  max-width: 1650px;
+  margin: 40px auto;
+  padding: 25px 10px;
+  background: #ffffff; 
+  border-radius: 12px; 
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.bouttons .btn {
+  color: #f1f5f9;
+  font-size: medium;
+}
+
+.alert {
+  margin-top: 40px;
+
+  text-align: center;
+  font-size:xx-large;
+  font-weight: 700;
+
+
+
+}
+
+
+.bouttons{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.bouttons .btn{
+  flex: 1;
+  min-width: 200px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.bouttons .btn:hover{
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+  
+.input-group{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.input-group input{
+  height: 48px;
+  border-radius: 10px;
+}
+
+.input-group .btn{
+  height: 48px;
+  padding: 0 25px;
+  border-radius: 10px;
+}
+
+
+.table{
+  margin-top: 50px;
+  /* width:100px; */
+
+  border-collapse: collapse;
+
+}
+
+
+.table thead{
+  background-color:#ffa500;
+  }
+
+  .table thead tr th {
+    font-size:14px;
+    font-weight:600;
+    color:#FFFFFF;
+    letter-spacing:0.45px;
+    opacity:1;
+    padding:4px;
+    vertical-align:top;
+    border:1px solid #dee2e685;
+    text-align: center;
+
+
+    }
+
+
+    td {
+      padding: 4px;
+
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+    
+    
+    tbody tr:hover {
+      background-color: #f5f5f5;
+    }
+    
+
+    .table tbody tr td  .btn{
+      border: none;
+    
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+
+      width: 100%;
+      margin-bottom: 10px;
+      color:#FFFFFF;
+
+
+    }
+
+
+   
+   
+
+  
+
+
+
+
+
+     
+
+/* .table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+  
+  }
+
+
+.table thead{
+
+
+  background-color:#ffa500;
+
+}
+
+.table thead th{
+
+
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.35px;
+    color:#FFFFFF;
+    opacity:1;
+    padding:12px;
+    vertical-align:top;
+    border:1px solid #dee2e685;
+    text-align: center;
+}
+
+.table tbody tr{
+  background-color: #fff;
+  transition: background 0.3s ease;
+}
+
+.table tbody tr:hover{
+  background-color: #f1f5f9;
+}
+
+
+.table td{
+  text-align: center;
+
+  font-size: 16px;
+  padding: 5px;
+} */
+
+
+.form-control-left{
+  width: 130px;
+  padding: 4px;
+  border-radius: 8px;
+  text-align: center;
+    /* font-size: 16px; */
+  position: relative;
+        font-family: Arial;
+
+
+
+}
+
+/* .form-control-left .option {
+  font-size: 10px;
+
+} */
+    
+  
+  .table .btn-success{
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+  
+
+
+
+       
+  
+    @media  (max-width:768px){
+      .table thead{
+           display:none;
+          }
+    
+    .table ,.table tbody,.table tr ,.table td{
+              display:block;
+              width:100%;
+    }
+  
+    .table tr {
+      margin-bottom: 20px;
+  }
+  
+  .table tbody tr td {
+    text-align: right;
+    padding-left: 50px;
+    position: relative;
+  
+  }
+  
+  .table td:before{
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 600;
+    text-align: left;
+  }
+    
+    
+  .bouttons .btn{
+
+
+  
+    border: none;
+    color: white;
+    padding: 15px ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    width: 100px;
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+  }
+
+
+
+
+}
+
+
+
+ 
+  
+
+    
+  
+  
+  

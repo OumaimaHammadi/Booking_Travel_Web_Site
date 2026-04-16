@@ -9,7 +9,7 @@
 
 <section class="payement-agence" id="payement-agence">
 
-<div class="container ">
+<div class="container">
 
 
 <div class="row" >
@@ -18,35 +18,36 @@
 <div class="col-md-6 py-3 py-md-0">
 
  
-        <% for(let item of items ) { %>
-            <div class="card" > 
 
 
+           <div class="card">
+  <!-- <img src="/photos/djerba.PNG" alt="Hotel"> -->
+    <img src="/photos/1692148234545-Mouradi club kantaoui.PNG" alt="Hotel">
 
- <img src= "/<%= item.image %> " > 
-   
+                <!-- <img src="/<%=item.image %>" alt=""> -->
 
 
- <div class="main-text">
-     <h1> Hotel: <span><%= item.name %></span></h1> 
-     <h1> Price: <span> <%= item.price %></span></h1>
-     <h1>Arrivée:<span> <%= item.Arrivee %></h1>
+  <div class="main-text">
+      <h1>Arrival: <span><%= item.Arrivee %></span></h1>
+    <h1>Departure: <span><%= item.Departure %></span></h1>
+    
+    <h1>Hotel Name: <span><%= item.name %></span></h1>
+    <h1>Price: <span><%= item.price %> dt</span></h1>
+
   
 
-     <h1> Départ:<span><%= item.Arrivee + item.NbreNuit %></span></h1>
-   <h1>Nuit(s): <span> <%= item.NbreNuit %></span></h1>
+    <h1>Night(s): <span><%= item.NbreNuit %></span></h1>
+    <h1>Room(s): <span><%= item.NbreChambre %></span></h1>
+    <h1>Adult(s): <span><%= item.NbreAdult %></span></h1>
+    <h1>Children: <span><%= item.NbreEnfant %></span></h1>
+    <h1>Supplement: <span><%= item.supplement %></span></h1>
+    <h1>Total: <span><%= item.total %> dt</span></h1>
 
-
-   <h1>  Chambre(s):<span> <%= item.NbreChambre %></span></h1>
-   <h1> Adulte(s):<span><%= item.NbreAdult %></span></h1>
-   <h1>Enfant(s) :<span><%= item.NbreEnfant %></span></h1>
 
     
-   
- </div>
-</div> 
+  </div>
+</div>
 
- <% } %>
 
 
 
@@ -63,8 +64,7 @@
                 <div class="coordonnees" >
                     <h1>
                         <i class='far fa-edit'></i>
-                        Entrez vos coordonnées
-        
+                   Enter your details        
                     </h1>
 
 
@@ -73,12 +73,12 @@
 
 
                
-                        <select  name="Civilite" class="form-control" placeholder="Civilité" class="select">
-                         <option value="" > Choisir une civilité
+                        <select  name="Civilite" class="form-control" placeholder="civility" class="select">
+                         <option value="" >Choose a civility
                          </option>
                          <option value="Mr">Mr </option>
-                         <option value="Mme"> Mme </option>
-                         <option value="Mlle"> Mlle </option>
+                         <option value="Mme"> Mrs </option>
+                         <option value="Mlle"> Miss </option>
                         
                </select>
 
@@ -90,7 +90,7 @@
                  <% } %>
                
              
-                 <input type="text" class="form-control" name="Prenom" placeholder="Prénom" class="input">
+                 <input type="text" class="form-control" name="Prenom" placeholder="First name" class="input">
                  <% let PrenomErrors = validationErrors.find(err => err.param === 'Prenom') %>
                  <% if (PrenomErrors) { %>
                      <p class="alert alert-danger">
@@ -99,7 +99,7 @@
                  <% } %>
 
                  
-                 <input type="text" class="form-control" name="Nom" placeholder="Nom">
+                 <input type="text" class="form-control" name="Nom" placeholder="Name">
                  <% let NomErrors = validationErrors.find(err => err.param === 'Nom') %>
                  <% if (NomErrors) { %>
                      <p class="alert alert-danger">
@@ -117,7 +117,7 @@
                  <% } %>
 
                  
-                 <input type="tel" class="form-control" name="Portable" placeholder="Portable">
+                 <input type="tel" class="form-control" name="Portable" placeholder="Phone number">
                  <% let PortableErrors = validationErrors.find(err => err.param === 'Portable') %>
                  <% if (PortableErrors) { %>
                      <p class="alert alert-danger">
@@ -159,18 +159,13 @@
 
 
 
-                 Sélectionnez l'agence la plus proche de vous 
-            </h1>
+Select the agency closest to you            </h1>
 
             <form action="/payement-agence" method="POST"  class="form-agence">
 
 
             <select  name="Civilite" class="form-control" placeholder="Civilité">
-                    <option value="" > 
-                                        <h6> Agences Tunis  </h6>                                      </h6>
-
-    
-                    </option>
+                    <option value="" > Tunis Agencies    </option>              
                     <option value="Mr"> Lac 1 </option>
                     <option value="Mme"> Lac 2 </option>
                     <option value="Mlle"> Carthage</option>
@@ -182,53 +177,47 @@
 
 
       <select  name="Civilite" class="form-control" placeholder="Civilité">
-        <option value="" > Agences Sousse
-        </option>
-        <option value="Mr"> Sousse Ville </option>
-        <option value="Mme"> Hammam Sousse </option>
-        <option value="Mlle"> Shaloul</option>
+        <option value="Sousse Agencies" > Sousse Agencies  </option>
+        <option value="Sousse City"> Sousse City </option>
+        <option value="Hammam Sousse"> Hammam Sousse </option>
+        <option value="Shaloul"> Shaloul</option>
        
      </select>
 
 
      <select  name="Civilite" class="form-control" placeholder="Civilité">
-        <option value="" > Agences Kairaoun
+        <option value="Mahdia Agencies"> Mahdia Agencies
         </option>
-        <option value="Mr"> Kairaoun Ville </option>
-        <option value="Mme"> ..... </option>
-        <option value="Mlle"> .....</option>
+        <option value="Mahdia City"> Mahdia City </option>
+       
        
      </select>
 
 
      <select  name="Civilite" class="form-control" placeholder="Civilité">
-        <option value="" > Agences Kef
+        <option value="Kef Agencies" > Kef Agencies
         </option>
-        <option value="Mr"> Kef Ville </option>
-        <option value="Mme"> ..... </option>
-        <option value="Mlle"> ......</option>
-       
-     </select>
-
-
-
-     <select  name="Civilite" class="form-control" placeholder="Civilité">
-        <option value="" > Agences Beja
-        </option>
-        <option value="Mr"> Beja Ville </option>
-        <option value="Mme"> ..... </option>
-        <option value="Mlle"> ......</option>
+        <option value="Kef City"> Kef City </option>
+     
        
      </select>
 
 
 
      <select  name="Civilite" class="form-control" placeholder="Civilité">
-        <option value="" > Agences Kasrine
+        <option value=" Beja Agencies " >  Beja Agencies </option>
+        <option value="Beja City "> Beja City </option>
+      
+       
+     </select>
+
+
+
+     <select  name="Civilite" class="form-control" placeholder="Civilité">
+        <option value=" Kasrine Agencies" >  Kasrine Agencies
         </option>
-        <option value="Mr"> Kasrine Ville </option>
-        <option value="Mme"> ..... </option>
-        <option value="Mlle"> ......</option>
+        <option value="Kasrine City"> Kasrine City </option>
+      
        
      </select>
 
@@ -241,13 +230,14 @@
     <form    action="/thanks" >
 
 
-    <input type="submit" value="Validez " class="btn btn-primary btn-lg btn-block">
+    <input type="submit" value="Confirm your booking" class="btn btn-primary btn-lg btn-block">
     </form>
    
 
         </div>
     
-
+</div>
+</div>
       
 
 </section>

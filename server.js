@@ -4,9 +4,9 @@ const app = express()
 const homeRouter = require('./routers/home.route')
 const authRouter = require('./routers/auth.route')
 const HotelRouter = require('./routers/hotel.route')
-const PreBookingRouter= require('./routers/PreBooking.route')
+const reservationRouter= require('./routers/reservation.route')
 const adminRouter= require('./routers/admin.route')
-const ReservationRouter=require('./routers/reservations.router')
+const bookingRouter=require('./routers/booking.router')
 const payementAgence = require('./routers/payement-agence.route')
 const thankRouter =require('./routers/thanks.route')
 
@@ -30,7 +30,8 @@ app.use(flash())
 
 const STORE = new StoreSession({
      //uri :'mongodb://localhost:27017/online-shop',
-   uri :'mongodb://127.0.0.1:27017/booking-travel',
+   //uri :'mongodb://127.0.0.1:27017/booking-travel',
+   uri:'mongodb+srv://hammadiioumaima_db_user:vFSKsZyIxlriCEPa@booking-travel-cluster.ucag5ux.mongodb.net/',
 
 
    
@@ -53,9 +54,9 @@ app.set('views','views') //default
 app.use('/', homeRouter)
 app.use('/', authRouter )
 app.use('/hotel',HotelRouter)
-app.use('/pre-booking',PreBookingRouter)
+app.use('/reservation',reservationRouter)
 app.use('/admin',adminRouter)
-app.use('/reservation',ReservationRouter)
+app.use('/booking',bookingRouter)
 app.use('/payement-agence',payementAgence)
 app.use('/thanks',thankRouter)
 

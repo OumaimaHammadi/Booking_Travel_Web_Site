@@ -1,28 +1,51 @@
 const mongoose = require('mongoose')
-//const DB_URL='mongodb://localhost:27017/online-shop'
-const DB_URL='mongodb://127.0.0.1:27017/booking-travel'
+//const DB_URL='mongodb://127.0.0.1:27017/booking-travel'
+const DB_URL='mongodb+srv://hammadiioumaima_db_user:vFSKsZyIxlriCEPa@booking-travel-cluster.ucag5ux.mongodb.net/'
 
 
 
-const PreBookingSchema= mongoose.Schema({
+
+const ReservationSchema= mongoose.Schema({
     name:String,
     price:Number,
-    total:Number,
+
     NbreChambre:Number,
-    userId:String,
-    PreBookingId:String,
+    NbreAdult:Number,
+    NbreEnfant:Number,
+    ChildAge:Number,
+
+  Arrivee: {
+    type: Date,
+    required: true
+  },
+
+  Departure: {
+    type: Date,
+    required: true
+  },
+      userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'user'
+  },
+    hotelId:String,
+
     timestamp:String,
-    supplement:String,
+    
     PrixAllinclusive:Number,
     PrixDemiPension:Number,
-    PrixpetitDejeuner:Number
-})
-const PreBookingItem =mongoose.model('reservation',PreBookingSchema)
+    PrixpetitDejeuner:Number,
 
-exports.addNewPreBooking= (data)=>{
+    // Subtotal:Number,
+    // NbreNuit:Number,
+
+    image:String
+})
+const reservationItem =mongoose.model('reservation',ReservationSchema)
+
+exports.addNewReservation= (data)=>{
     return new Promise((resolve,reject)=>{
 mongoose.connect(DB_URL,{ useNewUrlParser: true , useUnifiedTopology: true}).then(()=>{
-    let item = new  PreBookingItem(data)
+    let item = new  reservationItem(data)
     return item.save()
 }).then(()=>{
     mongoose.disconnect()
@@ -35,15 +58,16 @@ mongoose.connect(DB_URL,{ useNewUrlParser: true , useUnifiedTopology: true}).the
 
     })
 }
-exports.getPreBookingByUser= (userId) =>{
+exports.getReservationByUser= (userId) =>{
     return new Promise((resolve,reject) =>{
-        mongoose.connect(DB_URL,{ useNewUrlParser: true , useUnifiedTopology: true}).then(()=>
-       PreBookingItem.find(
+        mongoose.connect(DB_URL,{ useNewUrlParser: true , useUnifiedTopology: true})
+        .then(()=>
+       reservationItem.find(
             {userId : userId},
             {},
             {sort : {timestamp: 1 }}
           
-            )
+            ).populate('userId')
     
     ).then(items =>{
             mongoose.disconnect()
@@ -59,7 +83,7 @@ exports.getPreBookingByUser= (userId) =>{
 exports.editItem=(id,newData)=>{
     return new Promise((resolve,reject) =>{
         mongoose.connect(DB_URL,{ useNewUrlParser: true , useUnifiedTopology: true}).then(()=>
-       PreBookingItem.updateOne({_id:id} ,newData)
+       reservationItem.updateOne({_id:id} ,newData)
     
     ).then(items =>{
             mongoose.disconnect()
@@ -74,7 +98,7 @@ exports.editItem=(id,newData)=>{
 exports.deleteItem=(id)=>{
     return new Promise((resolve,reject) =>{
         mongoose.connect(DB_URL,{ useNewUrlParser: true , useUnifiedTopology: true}).then(()=>
-       PreBookingItem.findByIdAndDelete({_id:id})
+       reservationItem.findByIdAndDelete({_id:id})
     
     ).then(() =>{
             mongoose.disconnect()
@@ -90,7 +114,7 @@ exports.deleteItem=(id)=>{
 exports.deleteAllItem=(id)=>{
     return new Promise((resolve,reject) =>{
         mongoose.connect(DB_URL,{ useNewUrlParser: true , useUnifiedTopology: true}).then(()=>
-       PreBookingItem.deleteMany()
+       reservationItem.deleteMany()
     
     ).then(() =>{
             mongoose.disconnect()
@@ -104,3 +128,20 @@ exports.deleteAllItem=(id)=>{
 
 
 
+/// Voir Hotels by id
+exports.getHotelById = (id) => {
+    //connect db
+    return new Promise((resolve,reject)=>{
+        mongoose.connect(DB_URL ,{ useNewUrlParser: true , useUnifiedTopology: true}).then(()=>{
+            return reservationItem.findById(id).then((hotels)=>{
+                mongoose.disconnect()
+                resolve(hotels)
+            }).catch(err => reject(err))
+               
+            
+
+    })
+   
+    })
+    
+}

@@ -25,7 +25,6 @@
         <%  } else { %>
 
     <div class="row" >
-      <!-- style="margin-top: 50px;" -->
       <div class="col-md-6 py-3 py-md-0">
         <% if(  validationError ){ %>
             <p class="alert alert-danger">
@@ -45,29 +44,69 @@
 
 
 
-            <form action="/pre-booking" method="POST">
-              <input type="number" class="form-control" placeholder="Arrivée"  name = "Arrivee"  required>
-  
-  
-  
-              <input type="number" class="form-control" placeholder="Nombre de Nuits" name="NbreNuit" required>
-              <input type="number" class="form-control" placeholder="Nombre d'Adulte"  name="NbreAdult" required>
-              <input type="number" class="form-control" placeholder="Nombre d'Enfant"  name="NbreEnfant" required>
-              <input type="number" class="form-control" placeholder="Nombre d'Age Enfant" required>
-              <input type="number" class="form-control" placeholder="Nombre de Chambre" name="NbreChambre" required>
-  
+            <form action="/reservation" method="POST">
+              <!-- <input type="date" class="form-control" placeholder="Arrival" name="Arrivee" required>
+              <input type="date" class="form-control" placeholder="Departure" name="Departure" required> -->
+
+              <!-- <input type="date" class="form-control" id="arrival" placeholder="Arrival" name="Arrivee" required>
+              <input type="date" class="form-control" id="departure" placeholder="Departure" name="Departure" required>
+
+              <script>
+                flatpickr("#arrival", {
+                  locale: "fr",
+                  dateFormat: "Y-m-d"
+                });
+
+                flatpickr("#departure", {
+                  locale: "fr",
+                  dateFormat: "Y-m-d"
+                });
+              </script> -->
+<input
+  type="text"
+  class="form-control"
+  id="arrival"
+  name="Arrivee"
+  placeholder="Arrival (JJ/MM/AAAA)"
+  required
+>
+
+<input
+  type="text"
+  class="form-control"
+  id="departure"
+  name="Departure"
+  placeholder="Departure (JJ/MM/AAAA)"
+  required
+>
+<script>
+  flatpickr("#arrival", {
+    locale: "fr",
+    altInput: true,
+    altFormat: "d/m/Y",
+    dateFormat: "Y-m-d"
+  });
+
+  flatpickr("#departure", {
+    locale: "fr",
+    altInput: true,
+    altFormat: "d/m/Y",
+    dateFormat: "Y-m-d"
+  });
+</script>
+
+
             
-  
-  
-  
-  
-            
-  
-  
+
+              <input type="hidden" class="form-control" placeholder="Number of Nights" name="NbreNuit" value="Departure - Arrivee" required>
+              <input type="number" class="form-control" placeholder="Number of Adults"  name="NbreAdult" required>
+              <input type="number" class="form-control" placeholder="Number of Children"  name="NbreEnfant" required>
+              <input type="number" class="form-control" placeholder="Child Age"  name="ChildAge" required>
+              <input type="number" class="form-control" placeholder="Number of Rooms" name="NbreChambre" required>
                  
               <input type="hidden" name="name" value="<%= hotel.name %>">
               <input type="hidden" name="price" value="<%= hotel.price %>">
-              <input type="hidden" name="hotel" value="<%= hotel._id%>">
+              <input type="hidden" name="hotelId" value="<%= hotel._id%>">
               <input type="hidden" name="image" value="<%=hotel.image %>">
   
   
@@ -78,9 +117,8 @@
   
   
   
-              <input type="hidden" name="redirectTo" value="/hotel/<%= hotel._id%>">
-              <!-- <input type="submit" value ="Add to cart" class="btn btn-primary">   -->
-              <!-- <input type="submit" value ="Pre-booking" class="btn btn-primary btn-lg btn-block">      -->
+              <!-- <input type="hidden" name="redirectTo" value="/hotel/<%= hotel._id%>"> -->
+             
   
                     
   
@@ -89,7 +127,7 @@
   
            
             <textarea class="form-control" rows="5" name="text" placeholder="Enter Your Name & Details"></textarea>
-              <input type="submit" value ="Continuez la réservation" class=" btn btn-primary">     
+              <input type="submit" value ="CONTINUE YOUR BOOKING " class=" btn btn-primary">     
           
   
           </form>
@@ -123,14 +161,14 @@
           <i class="fa-solid fa-star checked"></i>
           <i class="fa-solid fa-star checked"></i>
           <i class="fa-solid fa-star checked"></i>
-          <i class="fa-solid fa-star "></i>
+          <i class="fa-solid fa-star checked "></i>
           <i class="fa-solid fa-star "></i>
         </div>
 
 
-        <h2>Prix/persone :<strong> <%= hotel.price %> DT</strong></h2>
+        <h2>Price/person :<strong> <%= hotel.price %> DT</strong></h2>
 
-        <p> <strong > Details sur <%=hotel.name %>:<br></strong>
+        <p> <strong >Details about <%=hotel.name %>:<br></strong>
           <%= hotel.description %> </p>
 
             
@@ -155,6 +193,9 @@
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
 
 
 

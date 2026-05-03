@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar{
+    
+    background: #f9f9f9;
+}
+
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#logo {
+    margin-right: 70px; 
+}
+
+#logo{
+    font-size: 36px;
+    font-weight: 550;
+    color: black;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 5px;
+}
+#logo span{
+    color: #ffa500;
+}
+/* .navbar-toggler span{ */
+#navbar  button{
+     background: #ffa500;
+    color: white;
+    border: none;
+}
+.navbar-nav{
+    margin-left:20px;
+}
+.nav-item .nav-link{
+    font-size: 16px;
+    font-weight: 550;
+    color: black;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: 0.5s ease;
+}
+/* .nav-item .nav-link:hover{ */
+    /* background: #ffa500; */
+    /* color: white; */
+/* } */
+
+/* active page */
+.navbar .nav-item.active .nav-link{
+    background:#ffa500;
+    color:#fff !important;
+}
+
+#navbar form {
+        margin-left: auto; 
+
+}
+
+/* #navbar form button{
+    background: orange;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+} */
+/* Navbar End */
+
+
+/* Home css*/
+
+
+
+
+/* Dropdown menu */
+.dropdown-menu {
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    width: fit-content;
+    min-width: 230px;
+    
+    font-size: 18px !important; /* force la même taille partout */
+}
+
+/* Items */
+.dropdown-item {
+    font-size: 18px !important; /* force la même taille partout */
+}
+
+.dropdown-menu span{
+    padding: 30px;
+    color:black !important;
+    font-weight:500;
+    font-size: large;
+}
+
+/* DROPDOWN ITEM */
+.dropdown-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:8px;
+    border-radius:10px;
+    transition:0.25s;
+
+}
+
+.dropdown-item:hover{
+    background:#f5f5f5;
+}
+
+
+/* PROFILE  */
+
+.dropdown-menu-end {
+    right: 0;
+    left: auto;
+}
+
+#profileDropdown{
+  
+    color: #ffa500;
+
+}
+
+#profileDropdown img{
+    object-fit:cover;
+    transition:0.3s;
+}
+
+#profileDropdown img:hover{
+    transform:scale(1.08);
+}
+
+/* DROPDOWN HEADER */
+.dropdown-header{
+    font-size:14px;
+    text-align:center;
+}
+
+/* LOGOUT */
+.dropdown-item.text-danger:hover{
+    background:#ffe5e5;
+}
+
+
+.avatar-circle {
+  width: 45px;
+  height: 45px;
+  background-color:sandybrown;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.initials {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+
+
+@media (max-width:765px){
+    .book{
+        padding: 0;
+    }
+    .main-text h1{
+        padding: 20px;
+    }
+}
+/* Section Book End */
+
+
+
+
+
+
+/* About Start */
+.about{
+    padding: 50px;
+    margin-top: 50px;
+    background: #f9f9f9;
+}
+.about .card{
+    border-radius: 10px;
+}
+.about .card img{
+    border-radius: 10px;
+}
+.about h2{
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.about p{
+    font-weight: 500;
+}
+#about-btn{
+    width: 150px;
+    height: 38px;
+    border: none;
+    border-radius: 5px;
+    background: #ffa500;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 550;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#about-btn:hover{
+    width: 170px;
+}
+@media (max-width:765px){
+    .about{
+        padding: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+

@@ -1,29 +1,12 @@
-/* Home Section Start */
-
-/* .home-container{
-  max-width: 1800px;
-  margin: 40px 0px;
-  padding: 25px 10px;
-  background: #ffffff; 
-  border-radius: 12px; 
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-
-
-   
-} */
-/* .container {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-} */
-
 .home{
 
-width: 100vw;  
+    width: 100vw;  
     height:90vh;
     background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url(./photos/sidibousid.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 30px;
+
 }
 
 .home .content{
@@ -128,13 +111,6 @@ width: 100vw;
 }
 /* Home Section End */
 
-form{
-    margin-top: 20px;
-}
-/* button .btn .btn-primary{
-    margin-right: 20px;
-
-} */
 
 .input-group{
   display: flex;

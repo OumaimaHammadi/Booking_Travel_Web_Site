@@ -7,6 +7,8 @@ exports.getHotel =(req,res,next)=>{
             isUser:true,
             validationError: req.flash('validationErrors')[0],
             isAdmin :req.session.isAdmin,
+    UserName: req.session.username , 
+
            pageTitle:'Hotel'
 
 
@@ -27,9 +29,11 @@ exports.getHotelByid =(req,res,next) => {
     HotelModel.getHotelById(id).then((hotel) =>{
     res.render('hotel',{
         hotel : hotel ,
-        isUser :true,
+        isUser : req.session.userId,
         validationError: req.flash('validationErrors')[0],
         isAdmin :req.session.isAdmin,
+        UserName: req.session.username , 
+
         pageTitle:'Hotel'
 
 

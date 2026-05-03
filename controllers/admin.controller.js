@@ -9,8 +9,10 @@ exports.getAdd=(req,res,next)=>{
         validationErrors: req.flash('validationErrors'),
          isUser : true ,
          isAdmin :true,
+        UserName:req.session.username,
 
          pageTitle:'Add Hotel'
+
 
 
     })
@@ -75,7 +77,10 @@ exports.getReservations=(req,res,next)=>{
             bookings:bookings,
             isUser : true ,
             isAdmin :true,
-            pageTitle:'Manage Reservations',
+        UserName:req.session.username,
+
+            pageTitle:'Manage Booking'
+
 
 
 

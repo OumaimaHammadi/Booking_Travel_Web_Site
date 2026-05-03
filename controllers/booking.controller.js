@@ -10,6 +10,8 @@ exports.getBooking = (req,res,next) =>{
          validationError: req.flash('validationErrors')[0],
          isUser : true,
         isAdmin :req.session.isAdmin,
+        UserName:req.session.username,
+
          pageTitle:'Booking'
 
 

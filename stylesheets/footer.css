@@ -22,14 +22,14 @@ footer{
     text-align: center;
 }*/
 
-footer .logo a{
+footer .footer-logo {
     font-size: 36px;
     font-weight: 550;
     padding-top: 30px;
     color: black;
     text-shadow: 0px 0px 1px black;
 }
-footer .logo a span{
+footer .footer-logo span{
     color: #ffa500;
 }
 

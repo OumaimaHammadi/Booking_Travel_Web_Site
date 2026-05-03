@@ -17,8 +17,11 @@ else
     hotelsPromise.then( hotels =>{
         res.render('index',{
         hotels : hotels ,
-        isUser :  req.session.userId,
+        isUser :req.session.userId,
         isAdmin :req.session.isAdmin,
+        UserName:req.session.username,
+
+
         pageTitle:'Home'
     
 

@@ -29,9 +29,8 @@ app.use(flash())
 
 
 const STORE = new StoreSession({
-     //uri :'mongodb://localhost:27017/online-shop',
-   //uri :'mongodb://127.0.0.1:27017/booking-travel',
-   uri:'mongodb+srv://hammadiioumaima_db_user:vFSKsZyIxlriCEPa@booking-travel-cluster.ucag5ux.mongodb.net/',
+   uri :'mongodb://127.0.0.1:27017/booking-travel',
+   //uri:'mongodb+srv://hammadiioumaima_db_user:vFSKsZyIxlriCEPa@booking-travel-cluster.ucag5ux.mongodb.net/',
 
 
    
@@ -41,15 +40,24 @@ const STORE = new StoreSession({
 
 app.use(session({
     secret:'this is my secret to hash express session ....',
-    saveUninitialized :true,
+    saveUninitialized :false,
     resave: false,
     store:STORE 
 }))
 
 
 
+
 app.set('view engine','ejs')
 app.set('views','views') //default
+
+
+
+app.use((req, res, next) => {
+   
+     UserName=req.session.username
+    next()
+})
 
 app.use('/', homeRouter)
 app.use('/', authRouter )

@@ -20,6 +20,8 @@ exports.getBookingByid=(req,res,next)=>{
         validationErrors: req.flash('validationErrors'),
         isUser : true ,
         isAdmin :req.session.isAdmin,
+                UserName:req.session.username,
+
 
 
          pageTitle:'Payement Agence'

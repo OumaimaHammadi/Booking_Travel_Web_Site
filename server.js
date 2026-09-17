@@ -29,11 +29,9 @@ app.use(flash())
 
 
 const STORE = new StoreSession({
-   uri :'mongodb://127.0.0.1:27017/booking-travel',
-   //uri:'mongodb+srv://hammadiioumaima_db_user:vFSKsZyIxlriCEPa@booking-travel-cluster.ucag5ux.mongodb.net/',
+  uri :'mongodb://127.0.0.1:27017/booking-travel',
+//uri:'mongodb+srv://hammadiioumaima_db_user:vFSKsZyIxlriCEPa@booking-travel-cluster.ucag5ux.mongodb.net/',
 
-
-   
     collection :'sessions'
 
 })
@@ -107,8 +105,9 @@ app.get('/not-admin',(req,res,next)=>{
 })
 
 
-app.listen(5000,(err)=>{
+// app.listen(5000,(err)=>{
 
-    console.log('Server is 5000 okk')
+//     console.log('Server is 5000 okk')
 
-})
+// })
+module.exports = app;

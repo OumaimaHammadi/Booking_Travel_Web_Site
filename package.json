@@ -21,7 +21,6 @@
     "express-session": "^1.17.3",
     "express-validator": "^6.15.0",
     "jsonwebtoken": "^9.0.0",
-    "mongodb": "^5.6.0",
     "mongoose": "^7.2.2",
     "multer": "^1.4.4",
     "serverless-http": "^4.0.0",

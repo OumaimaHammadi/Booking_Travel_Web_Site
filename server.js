@@ -30,7 +30,7 @@ app.use(flash())
 
 const STORE = new StoreSession({
   uri :'mongodb://127.0.0.1:27017/booking-travel',
-//uri:'mongodb+srv://hammadiioumaima_db_user:vFSKsZyIxlriCEPa@booking-travel-cluster.ucag5ux.mongodb.net/',
+// uri:'mongodb+srv://hammadiioumaima_db_user:vFSKsZyIxlriCEPa@booking-travel-cluster.ucag5ux.mongodb.net/',
 
     collection :'sessions'
 

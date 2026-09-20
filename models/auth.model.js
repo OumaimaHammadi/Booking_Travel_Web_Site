@@ -1,7 +1,8 @@
 const mongoose =require('mongoose')
 const bcrypt =require('bcryptjs')
-// const DB_URL='mongodb://127.0.0.1:27017/booking-travel'
-const DB_URL='mongodb+srv://hammadiioumaima_db_user:vFSKsZyIxlriCEPa@booking-travel-cluster.ucag5ux.mongodb.net/'
+require("dotenv").config();
+
+const DB_URL = process.env.MONGO_URI;
 
 
 

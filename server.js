@@ -26,18 +26,21 @@ app.use('/photos',express.static('photos'))
 
 
 app.use(flash())
-
+require("dotenv").config();
 
 const STORE = new StoreSession({
+    uri:process.env.MONGO_URI,
 //   uri :'mongodb://127.0.0.1:27017/booking-travel',
-uri:'mongodb+srv://hammadiioumaima_db_user:vFSKsZyIxlriCEPa@booking-travel-cluster.ucag5ux.mongodb.net/',
+// uri:'mongodb+srv://hammadiioumaima_db_user:vFSKsZyIxlriCEPa@booking-travel-cluster.ucag5ux.mongodb.net/',
 
     collection :'sessions'
 
 })
 
 app.use(session({
-    secret:'this is my secret to hash express session ....',
+    // secret:'this is my secret to hash express session ....',
+        secret: process.env.SESSION_SECRET,
+
     saveUninitialized :false,
     resave: false,
     store:STORE 
@@ -110,4 +113,4 @@ app.get('/not-admin',(req,res,next)=>{
 //     console.log('Server is 5000 okk')
 
 // })
-module.exports = app;
+ module.exports = app;

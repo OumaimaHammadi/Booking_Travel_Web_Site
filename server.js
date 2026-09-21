@@ -38,8 +38,8 @@ const STORE = new StoreSession({
 })
 
 app.use(session({
-    // secret:'this is my secret to hash express session ....',
-        secret: process.env.SESSION_SECRET,
+    secret:'this is my secret to hash express session ....',
+        // secret: process.env.SESSION_SECRET,
 
     saveUninitialized :false,
     resave: false,

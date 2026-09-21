@@ -20,7 +20,7 @@ const flash =require('connect-flash')
 app.use(express.static(path.join(__dirname ,'assetes')))
 app.use(express.static(path.join(__dirname ,'images')))
 app.use(express.static(path.join(__dirname ,'stylesheets')))
-app.use('/photos',express.static('photos'))
+app.use('/photos',express.static(path.join(__dirname ,'photos')))
 
 
 

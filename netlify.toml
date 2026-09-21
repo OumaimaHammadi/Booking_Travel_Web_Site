@@ -5,6 +5,11 @@
   external_node_modules = ["express"]
   node_bundler = "esbuild"
 
+  [functions]
+  node_bundler = "esbuild"
+  included_files = ["views/**"]
+  external_node_modules = ["express", "ejs"]
+
 [functions.api]
   node_bundler = "esbuild"
   external_node_modules = ["mongodb", "mongoose", "connect-mongodb-session"]

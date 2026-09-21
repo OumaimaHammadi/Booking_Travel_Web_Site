@@ -5,13 +5,17 @@
   external_node_modules = ["express"]
   node_bundler = "esbuild"
 
-  [functions]
+
+[functions.api]
   node_bundler = "esbuild"
   external_node_modules = ["express", "ejs"]
+
 
 [functions.api]
   node_bundler = "esbuild"
   external_node_modules = ["mongodb", "mongoose", "connect-mongodb-session"]
+
+ 
 
 [[redirects]]
   from = "/*"

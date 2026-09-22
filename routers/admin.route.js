@@ -2,28 +2,41 @@ const router = require('express').Router()
 const check =require('express-validator').check
 const adminController =require('../controllers/admin.controller')
 const adminGuard = require('./guards/admin.guard')
-const multer =require('multer')
+// const multer =require('multer')
 const bodyParser =require('body-parser')
 
 const bodyParserMW = bodyParser.urlencoded ({extended :true})
+const upload = require('../config/multer');
 
 router.get('/add',adminGuard,adminController.getAdd)
-router.post('/add',adminGuard,multer({
-    storage:multer.diskStorage({
-        destination:(req,file,cb)=>{
-            cb(null,'images')
-        },
-        filename:(req,file,cb)=>{
-            cb(null,Date.now() + "-" + file.originalname)
-        }
+// router.post('/add',adminGuard,multer({
+//     storage:multer.diskStorage({
+//         destination:(req,file,cb)=>{
+//             cb(null,'images')
+//         },
+//         filename:(req,file,cb)=>{
+//             cb(null,Date.now() + "-" + file.originalname)
+//         }
 
-    })
-}).single('image'),
-check('image').custom((value,{req})=>{
-    if(req.file) return true
-    else throw 'image is required'
+//     })
+// }).single('image'),
+// check('image').custom((value,{req})=>{
+//     if(req.file) return true
+//     else throw 'image is required'
 
-}),
+// }),
+
+
+
+router.post(
+    '/add',
+    adminGuard,
+    upload.single('image'),
+
+    check('image').custom((value, { req }) => {
+        if (req.file) return true;
+        throw new Error('Image is required');
+    }),
 check('name')
 .not()
 .isEmpty()

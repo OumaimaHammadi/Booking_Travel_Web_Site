@@ -26,7 +26,8 @@ exports.postAdd=(req,res,next)=>{
            price: req.body.price,
            category: req.body.category,
             description:req.body.description,
-           image :req.file.originalname,
+        //    image :req.file.originalname,
+        image: req.file.path,
            
            PrixAllinclusive:req.body.PrixAllinclusive,
            PrixDemiPension:req.body.PrixDemiPension,
@@ -47,6 +48,9 @@ exports.postAdd=(req,res,next)=>{
     validationResult(req).array())
     res.redirect('/admin/add') 
     }     
+
+
+    console.log(req.file);
 }
 
 

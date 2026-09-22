@@ -109,9 +109,9 @@ app.get('/not-admin',(req,res,next)=>{
 })
 
 
-// app.listen(5000,(err)=>{
+app.listen(5000,(err)=>{
 
-//     console.log('Server is 5000 okk')
+    console.log('Server is 5000 okk')
 
-// })
- module.exports = app;
+})
+ //module.exports = app;

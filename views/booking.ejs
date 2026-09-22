@@ -15,6 +15,7 @@
     <table class="table">
         <thead>
             <th > N° </th> 
+            <th>Image</th>
             <th > Username </th> 
             <th > Email </th> 
 
@@ -47,6 +48,7 @@
       <%  for ( let i = 0 ; i< items.length ;  i++) {  %>
         <tr>
             <td data-label=" N° ">  <%= i+1 %> </td>
+            <td data-label="Image"> <img src="<%=items[i].image %>" alt="<%= items[i].name %>"></td>
             <td  data-label=" Username"> <%= items[i].username %> </td>
             <td  data-label=" Email"> <%= items[i].email %> </td>
 

@@ -72,9 +72,10 @@
   
       }
   
-      th,
-      td {
+      .table th,
+      .table td {
         padding: 8px;
+
   
         text-align: center;
         border: 1px solid #ddd;
@@ -114,6 +115,25 @@
    
 
   
+   
+
+  /* Image de l'hôtel dans le tableau */
+.reservation-container table td img {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+/* Effet au survol */
+.reservation-container table td img:hover {
+    transform: scale(1.15);
+}
 
 
 

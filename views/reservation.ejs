@@ -21,6 +21,8 @@
     <table class="table">
         <thead>
             <th> N° </th> 
+                        <th>Image</th>
+
             <th> User </th> 
             <th> Email </th> 
 
@@ -60,6 +62,8 @@
 
         <tr>
             <td data-label="N°"> <%= i+1 %> </td>
+        <td data-label="Image"> <img src="<%=items[i].image %>" alt="<%= items[i].name %>"></td>
+
             <td data-label=" Username"> <%= items[i].userId.username %></td>
             <td data-label="Email"> <%= items[i].userId.email %></td>
 

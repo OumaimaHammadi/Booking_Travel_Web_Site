@@ -114,4 +114,4 @@ app.get('/not-admin',(req,res,next)=>{
 //     console.log('Server is 5000 okk')
 
 // })
- module.exports = app;
+module.exports = app;

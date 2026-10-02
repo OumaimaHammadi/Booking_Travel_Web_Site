@@ -84,3 +84,7 @@
 }
 
 
+/* ========================= TABLETTE ========================= */
+ @media (max-width: 991px) 
+ { .card-body h1 { font-size: 24px; } 
+ .card .card-body h6 { font-size: 18px; } .card .card-body h2 { font-size: 18px; } .card .card-one { padding: 15px; } } /* ========================= MOBILE ========================= */ @media (max-width: 767px) { .card { margin-top: 15px; margin-bottom: 15px; } .card .card-body, .card .card-one { padding-left: 12px; padding-right: 12px; } .card-body h1 { font-size: 20px; padding: 8px; text-align: center; } .card .card-body h6 { font-size: 17px; } .card .card-body h2 { font-size: 17px; } .card .card-body p { font-size: 14px; line-height: 1.6; } .star i { font-size: 14px; } .card .card-one .btn { width: 100%; margin-top: 15px; } } /* ========================= PETIT MOBILE ========================= */ @media (max-width: 480px) { .card { margin-top: 10px; } .card-body h1 { font-size: 18px; padding: 7px; } .card .card-body h6 { font-size: 16px; } .card .card-body h2 { font-size: 16px; } .card .card-body p { font-size: 13px; } .card .card-one { padding: 10px; } .star i { font-size: 13px; } .card .card-one input, .card .card-one textarea, .card .card-one select { font-size: 14px; } }

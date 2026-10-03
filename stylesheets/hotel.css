@@ -84,4 +84,40 @@
 }
 
 
-/* ================================ TABLETTE ================================ */ @media (max-width: 991px) { .container { width: 95%; max-width: 100%; } .card-body h1 { font-size: 26px; } .card .card-body h6 { font-size: 18px; } .card .card-body h2 { font-size: 19px; } } /* ================================ MOBILE ================================ */ @media (max-width: 767px) { .container { width: 100%; padding-left: 12px; padding-right: 12px; } /* On transforme la ligne Bootstrap en colonne. */ .row { display: flex; flex-direction: column; } /* Les deux colonnes prennent toute la largeur. */ .row > .col-md-6 { width: 100%; max-width: 100%; flex: 0 0 100%; } /* On utilise display: contents pour pouvoir réorganiser visuellement les éléments sans modifier le HTML. */ .row > .col-md-6:first-child { display: contents; } .row > .col-md-6:last-child { display: contents; } /* IMAGE EN PREMIER */ .row > .col-md-6:first-child > .card:first-of-type { order: 1; } /* INFORMATIONS DE L'HÔTEL */ .row > .col-md-6:last-child > .card { order: 2; } /* FORMULAIRE EN DERNIER */ .row > .col-md-6:first-child > .card:last-of-type { order: 3; } /* Image */ .card img { width: 100%; height: auto; max-height: 350px; object-fit: cover; } /* Titre hôtel */ .card .card-body h1 { font-size: 22px; padding: 10px; margin-bottom: 10px; word-break: break-word; } /* Localisation */ .card .card-body h6 { font-size: 16px; } /* Prix */ .card .card-body h2 { font-size: 18px; line-height: 1.5; } /* Description */ .card .card-body p { font-size: 15px; line-height: 1.6; } /* Formulaire */ .card .card-one { padding: 15px 10px; } .card .card-one input, .card .card-one textarea, .card .card-one select { width: 100%; max-width: 100%; box-sizing: border-box; } /* Bouton */ .card .card-one .btn { width: 100%; font-size: 14px; padding: 12px 10px; white-space: normal; } /* Étoiles */ .star i { font-size: 14px; } } /* ================================ PETITS TÉLÉPHONES ================================ */ @media (max-width: 480px) { .container { padding-left: 8px; padding-right: 8px; } .card { margin-top: 10px; margin-bottom: 10px; } .card .card-body { padding: 12px; } .card .card-one { padding: 10px; } .card .card-body h1 { font-size: 19px; padding: 8px; } .card .card-body h2 { font-size: 17px; } .card .card-body h6 { font-size: 15px; } .card .card-body p { font-size: 14px; } .card .card-one input, .card .card-one textarea { font-size: 14px; } .card .card-one .btn { font-size: 13px; padding: 11px 8px; } }
+/* ================================ TABLETTE ================================ */
+  @media (max-width: 1024px) 
+ { 
+    .container { width: 95%; max-width: 100%; 
+    } .card-body h1 { font-size: 26px; } 
+    .card .card-body h6 { font-size: 18px; }
+     .card .card-body h2 { font-size: 19px; } } 
+     /* ================================ MOBILE ================================ */
+      @media (max-width: 768px) { 
+        .container { width: 100%; padding-left: 12px; padding-right: 12px; }
+         /* On transforme la ligne Bootstrap en colonne. */
+          .row { display: flex; flex-direction: column; }
+           /* Les deux colonnes prennent toute la largeur. */ 
+           .row > .col-md-6 { 
+            width: 100%; max-width: 100%; flex: 0 0 100%; 
+        } /* On utilise display: contents pour pouvoir réorganiser visuellement les éléments sans modifier le HTML. */ .row > .col-md-6:first-child { display: contents; } .row > .col-md-6:last-child { display: contents; } /* IMAGE EN PREMIER */ .row > .col-md-6:first-child > .card:first-of-type { order: 1; } /* INFORMATIONS DE L'HÔTEL */ .row > .col-md-6:last-child > .card { order: 2; } /* FORMULAIRE EN DERNIER */ .row > .col-md-6:first-child > .card:last-of-type { order: 3; } /* Image */ .card img { width: 100%; height: auto; max-height: 350px; object-fit: cover; } /* Titre hôtel */ .card .card-body h1 { font-size: 22px; padding: 10px; margin-bottom: 10px; word-break: break-word; } /* Localisation */ .card .card-body h6 { font-size: 16px; } /* Prix */ .card .card-body h2 { font-size: 18px; line-height: 1.5; } /* Description */ .card .card-body p { font-size: 15px; line-height: 1.6; } 
+        /* Formulaire */ .card .card-one { padding: 15px 10px; } .card .card-one input, .card .card-one textarea, .card .card-one select { width: 100%; max-width: 100%; box-sizing: border-box; }
+         /* Bouton */ 
+         .card .card-one .btn { 
+            width: 100%; 
+            font-size: 14px;
+             padding: 12px 10px; 
+             white-space: normal; }
+              /* Étoiles */ 
+              .star i { font-size: 14px; } }
+               /* ================================ PETITS TÉLÉPHONES ================================ */
+                @media (max-width: 480px) { 
+                    .container { padding-left: 8px; padding-right: 8px; } 
+                    .card { margin-top: 10px; margin-bottom: 10px; } 
+                    .card .card-body { padding: 12px; } 
+                    .card .card-one { padding: 10px; }
+                     .card .card-body h1 { font-size: 19px; padding: 8px; } 
+                     .card .card-body h2 { font-size: 17px; } 
+                     .card .card-body h6 { font-size: 15px; } 
+                     .card .card-body p { font-size: 14px; } 
+                     .card .card-one input, .card .card-one textarea { font-size: 14px; } 
+                     .card .card-one .btn { font-size: 13px; padding: 11px 8px; } }

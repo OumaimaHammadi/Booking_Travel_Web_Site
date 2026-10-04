@@ -83,5 +83,103 @@ footer
 
 
 
+/* =========================
+   RESPONSIVE FOOTER
+========================= */
+
+/* Tablettes */
+@media (max-width: 768px) {
+
+    footer {
+        padding: 20px 10px;
+    }
+
+    footer .footer-logo {
+        font-size: 30px;
+        padding-top: 20px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    footer .paragraphe p {
+        margin-top: 20px;
+        margin-left: 0;
+        padding: 0 15px;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    footer .credit p {
+        padding-top: 15px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    footer .copyright p {
+        padding-top: 15px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .social-links {
+        text-align: center;
+    }
+
+    .social-links i {
+        font-size: 18px;
+        padding: 9px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+
+/* Téléphones */
+@media (max-width: 480px) {
+
+    footer {
+        padding: 15px 8px;
+    }
+
+    footer .footer-logo {
+        font-size: 25px;
+        padding-top: 15px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    footer .paragraphe p {
+        margin-top: 15px;
+        margin-left: 0;
+        padding: 0 10px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    footer .credit p {
+        padding-top: 10px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    footer .copyright p {
+        padding-top: 10px;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .social-links {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .social-links i {
+        font-size: 16px;
+        padding: 8px;
+        margin: 4px;
+    }
+}
+
 
 

@@ -1,4 +1,9 @@
-*{
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,169 +13,445 @@
     font-family: 'Lato', sans-serif;
 }
 
-.navbar{
-    
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+#navbar {
+    width: 100%;
     background: #f9f9f9;
+    padding: 8px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1000;
+}
+
+#navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 
-.navbar .container-fluid {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+/* =========================================================
+   LOGO
+========================================================= */
 
 #logo {
-    margin-right: 70px; 
-}
-
-#logo{
     font-size: 36px;
     font-weight: 550;
-    color: black;
-    text-shadow: 0px 1px 1px black;
+    color: #000;
+    text-shadow: 0 1px 1px #000;
+    margin-right: 50px;
     margin-bottom: 5px;
+    white-space: nowrap;
 }
-#logo span{
+
+#logo span {
     color: #ffa500;
 }
-/* .navbar-toggler span{ */
-#navbar  button{
-     background: #ffa500;
-    color: white;
-    border: none;
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 0;
 }
-.navbar-nav{
-    margin-left:20px;
+
+.nav-item {
+    margin: 0 2px;
 }
-.nav-item .nav-link{
+
+.nav-item .nav-link {
     font-size: 16px;
     font-weight: 550;
-    color: black;
+    color: #000;
     letter-spacing: 1px;
-    border-radius: 3px;
-    transition: 0.5s ease;
-}
-/* .nav-item .nav-link:hover{ */
-    /* background: #ffa500; */
-    /* color: white; */
-/* } */
-
-/* active page */
-.navbar .nav-item.active .nav-link{
-    background:#ffa500;
-    color:#fff !important;
+    border-radius: 5px;
+    padding: 9px 12px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-#navbar form {
-        margin-left: auto; 
 
+/* Hover */
+
+.nav-item .nav-link:hover {
+    background: #ffa500;
+    color: #fff;
 }
 
-/* #navbar form button{
-    background: orange;
-    color: white;
+
+/* Active page */
+
+.navbar .nav-item.active .nav-link {
+    background: #ffa500;
+    color: #fff !important;
+}
+
+
+/* =========================================================
+   TOGGLER MOBILE
+========================================================= */
+
+#navbar .navbar-toggler {
+    background: #ffa500;
+    color: #fff;
     border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-} */
-/* Navbar End */
+    padding: 7px 12px;
+    border-radius: 6px;
+    outline: none;
+    box-shadow: none;
+}
+
+#navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+#navbar .navbar-toggler i {
+    font-size: 22px;
+    color: #fff;
+}
 
 
-/* Home css*/
+/* =========================================================
+   PROFILE
+========================================================= */
+
+#navbar > .container-fluid > .navbar-collapse > form {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+#profileDropdown {
+    color: #ffa500;
+    text-decoration: none;
+    padding: 0;
+}
 
 
+/* Avatar */
+
+.avatar-circle {
+    width: 45px;
+    height: 45px;
+    background-color: #ffa500;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+.avatar-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 165, 0, 0.35);
+}
+
+.initials {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
 
-/* Dropdown menu */
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
 .dropdown-menu {
     border: none;
     border-radius: 12px;
     padding: 10px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    width: fit-content;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
     min-width: 230px;
-    
-    font-size: 18px !important; /* force la même taille partout */
+    width: fit-content;
+
+    font-size: 16px;
+    margin-top: 10px !important;
 }
 
-/* Items */
+
+/* Dropdown header */
+
+.dropdown-header {
+    font-size: 15px;
+    text-align: center;
+    color: #333;
+    padding: 10px;
+}
+
+
+/* Dropdown items */
+
 .dropdown-item {
-    font-size: 18px !important; /* force la même taille partout */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 16px !important;
+    color: #333;
+
+    padding: 10px;
+    border-radius: 8px;
+
+    transition: all 0.25s ease;
 }
 
-.dropdown-menu span{
-    padding: 30px;
-    color:black !important;
-    font-weight:500;
-    font-size: large;
-}
-
-/* DROPDOWN ITEM */
-.dropdown-item{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:8px;
-    border-radius:10px;
-    transition:0.25s;
-
-}
-
-.dropdown-item:hover{
-    background:#f5f5f5;
+.dropdown-item:hover {
+    background: #f5f5f5;
+    color: #ffa500;
 }
 
 
-/* PROFILE  */
+/* Icons */
+
+.dropdown-item i {
+    font-size: 18px;
+}
+
+
+/* Logout */
+
+.dropdown-item.text-danger {
+    color: #dc3545 !important;
+}
+
+.dropdown-item.text-danger:hover {
+    background: #ffe5e5;
+    color: #dc3545 !important;
+}
+
+
+/* Dropdown position */
 
 .dropdown-menu-end {
     right: 0;
     left: auto;
 }
 
-#profileDropdown{
-  
-    color: #ffa500;
 
+/* =========================================================
+   TABLETTE
+   max-width: 1024px
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    #navbar {
+        padding: 8px 15px;
+    }
+
+    #logo {
+        font-size: 30px;
+        margin-right: 25px;
+    }
+
+    .navbar-nav {
+        gap: 2px;
+    }
+
+    .nav-item .nav-link {
+        font-size: 15px;
+        padding: 8px 9px;
+        letter-spacing: 0.5px;
+    }
+
+    .avatar-circle {
+        width: 42px;
+        height: 42px;
+    }
+
+    .initials {
+        font-size: 18px;
+    }
 }
 
-#profileDropdown img{
-    object-fit:cover;
-    transition:0.3s;
+
+/* =========================================================
+   MOBILE
+   max-width: 991px
+========================================================= */
+
+@media (max-width: 991px) {
+
+    #navbar {
+        padding: 8px 15px;
+    }
+
+    #navbar .container-fluid {
+        flex-wrap: wrap;
+    }
+
+
+    /* Logo + bouton */
+
+    #logo {
+        font-size: 30px;
+        margin-right: 0;
+    }
+
+    #navbar .navbar-toggler {
+        margin-left: auto;
+    }
+
+
+    /* Menu */
+
+    #mynavbar {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 0;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3px;
+        margin-left: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav-item .nav-link {
+        width: 100%;
+        display: block;
+        text-align: left;
+
+        font-size: 16px;
+        padding: 11px 15px;
+
+        border-radius: 6px;
+    }
+
+
+    /* Profile */
+
+    #navbar > .container-fluid > .navbar-collapse > form {
+        width: 100%;
+        margin: 10px 0 0 0;
+        justify-content: flex-start;
+    }
+
+    #profileDropdown {
+        display: flex;
+        align-items: center;
+    }
+
+    .avatar-circle {
+        width: 45px;
+        height: 45px;
+    }
+
+
+    /* Dropdown */
+
+    .dropdown-menu {
+        position: absolute;
+        min-width: 230px;
+    }
 }
 
-#profileDropdown img:hover{
-    transform:scale(1.08);
+
+/* =========================================================
+   PETIT MOBILE
+   max-width: 576px
+========================================================= */
+
+@media (max-width: 576px) {
+
+    #navbar {
+        padding: 7px 10px;
+    }
+
+    #logo {
+        font-size: 26px;
+    }
+
+    #navbar .navbar-toggler {
+        padding: 6px 10px;
+    }
+
+    #navbar .navbar-toggler i {
+        font-size: 20px;
+    }
+
+    #mynavbar {
+        margin-top: 8px;
+    }
+
+    .nav-item .nav-link {
+        font-size: 15px;
+        padding: 10px 12px;
+    }
+
+    .avatar-circle {
+        width: 42px;
+        height: 42px;
+    }
+
+    .initials {
+        font-size: 18px;
+    }
+
+    .dropdown-menu {
+        min-width: 210px;
+        font-size: 15px;
+    }
+
+    .dropdown-item {
+        font-size: 15px !important;
+        padding: 9px;
+    }
 }
 
-/* DROPDOWN HEADER */
-.dropdown-header{
-    font-size:14px;
-    text-align:center;
+
+/* =========================================================
+   TRÈS PETIT ÉCRAN
+   max-width: 400px
+========================================================= */
+
+@media (max-width: 400px) {
+
+    #logo {
+        font-size: 23px;
+    }
+
+    #navbar {
+        padding: 6px 8px;
+    }
+
+    #navbar .navbar-toggler {
+        padding: 5px 9px;
+    }
+
+    #navbar .navbar-toggler i {
+        font-size: 18px;
+    }
+
+    .nav-item .nav-link {
+        font-size: 14px;
+        padding: 9px 10px;
+    }
+
+    .dropdown-menu {
+        min-width: 195px;
+    }
 }
-
-/* LOGOUT */
-.dropdown-item.text-danger:hover{
-    background:#ffe5e5;
-}
-
-
-.avatar-circle {
-  width: 45px;
-  height: 45px;
-  background-color:sandybrown;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.initials {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
 

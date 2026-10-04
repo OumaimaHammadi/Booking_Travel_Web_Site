@@ -8,22 +8,69 @@
     font-size: clamp(28px, 4vw, 42px);
     font-weight: 900;
     text-align: center;
-    color: #2e7d32; /* green élégant */
+    color: #2e7d32;
     margin-bottom: 40px;
     letter-spacing: 1px;
     text-transform: uppercase;
     position: relative;
 }
 
-/* Ligne décorative sous le titre */
 
 
-/* .heading::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 4px;
-    background-color: #2e7d32;
-    margin: 15px auto 0;
-    border-radius: 2px;
-} */
+/* =========================================================
+   TABLETTE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .title-container {
+        padding: 0 4%;
+        margin: 100px auto 50px;
+    }
+
+    .heading {
+        font-size: 34px;
+        margin-bottom: 30px;
+        letter-spacing: 0.8px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .title-container {
+        padding: 0 20px;
+        margin: 80px auto 40px;
+    }
+
+    .heading {
+        font-size: 30px;
+        margin-bottom: 25px;
+        letter-spacing: 0.5px;
+        line-height: 1.25;
+    }
+}
+
+
+/* =========================================================
+   PETIT MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .title-container {
+        padding: 0 15px;
+        margin: 60px auto 30px;
+    }
+
+    .heading {
+        font-size: 25px;
+        margin-bottom: 20px;
+        letter-spacing: 0.3px;
+        line-height: 1.3;
+    }
+}

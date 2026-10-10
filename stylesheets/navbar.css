@@ -607,7 +607,7 @@
         transform: translateX(-50%);
         margin: 0;
         /* font-size: clamp(19px, 4.5vw, 27px); */
-        font-size: clamp(20px, 4.5vw, 30px);
+        font-size: clamp(25px, 4.5vw, 35px);
 
         z-index: 1;
     }

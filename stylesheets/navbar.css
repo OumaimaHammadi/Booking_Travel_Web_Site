@@ -606,7 +606,9 @@
         left: 50%;
         transform: translateX(-50%);
         margin: 0;
-        font-size: clamp(19px, 4.5vw, 27px);
+        /* font-size: clamp(19px, 4.5vw, 27px); */
+        font-size: clamp(20px, 4.5vw, 30px);
+
         z-index: 1;
     }
 
@@ -681,11 +683,11 @@
 
     #navbar .navbar-toggler {
         width: 38px;
-        height: 38px;
+        height: 35px;
     }
 
     #logo {
-        font-size: 19px;
+        font-size: 25px;
     }
 
     .avatar-circle {

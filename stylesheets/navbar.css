@@ -615,7 +615,6 @@
         z-index: 1;
     }
 
-    /* Profil à droite */
     .profile-container {
         order: 3;
         margin-left: auto;
@@ -623,15 +622,14 @@
     }
 
     .avatar-circle {
-        width: 38px;
-        height: 38px;
+        width: 42px;
+        height:42 px;
     }
 
     .initials {
         font-size: 18px;
     }
 
-    /* Menu de navigation déroulant */
     #navbar .navbar-collapse {
         position: absolute;
         top: 100%;

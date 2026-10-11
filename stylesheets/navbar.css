@@ -595,8 +595,8 @@
         justify-content: center;
         /* width: 44px;
         height: 42px; */
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
 
         padding: 0;
         flex-shrink: 0;
@@ -622,8 +622,8 @@
     }
 
     .avatar-circle {
-        width: 40px;
-        height:40px;
+        width: 30px;
+        height:30px;
     }
 
     .initials {

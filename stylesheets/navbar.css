@@ -597,8 +597,8 @@
         height: 42px; */
 
 
-        width: 10px;
-        height: 10px;
+        width: 15px;
+        height: 15px;
 
         padding: 0;
         flex-shrink: 0;
@@ -624,8 +624,8 @@
     }
 
     .avatar-circle {
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
     }
 
     .initials {
